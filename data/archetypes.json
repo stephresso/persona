@@ -1,0 +1,18 @@
+{
+    "archetypes": [
+      "Problem Solver",
+      "Innovator",
+      "Leader",
+      "Analyst"
+    ],
+    "questions": [
+      {
+        "question": "When faced with a challenge, I...",
+        "options": ["Analyze it thoroughly", "Look for creative solutions", "Take charge", "Research extensively"]
+      },
+      {
+        "question": "When cooking a recipe I...",
+        "options": ["Follow the instructions precisely", "Look at the picture and wing it", "Taste as I go and adjust"]
+      }
+    ]
+  }
