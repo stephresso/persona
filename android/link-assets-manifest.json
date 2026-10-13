@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Boldonse-Regular.ttf",
+      "sha1": "c02cfba8406c250cecfd8e35319a4ab03afc59c8"
+    },
+    {
+      "path": "assets/fonts/Manrope-Medium.ttf",
+      "sha1": "67f2bbd06bf12486701b660066d774d18212c6b9"
+    },
+    {
+      "path": "assets/fonts/Manrope-SemiBold.ttf",
+      "sha1": "b5e59950465f67853440f82e2966b36cb0aeaa03"
+    }
+  ]
+}

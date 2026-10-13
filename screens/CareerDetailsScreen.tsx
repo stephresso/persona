@@ -1,283 +1,528 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
   StyleSheet,
   ScrollView,
+  Animated,
+  LayoutChangeEvent,
 } from 'react-native';
-import { Career, CompanySize } from '../types';
+import {
+  Career,
+  CompanySize,
+  EntryPath,
+  Riasec,
+  WorkStyle,
+} from '../types';
+import { COLORS, SPACING, FONT, RADIUS, shadow, displayLineHeight } from '../constants/theme';
+import Screen from '../components/Screen';
+import Character from '../components/Character';
+import { WavyBadge } from '../components/Shapes';
+import { CHARACTER, characterTintForCard } from '../constants/characters';
+import { skillDefinition } from '../constants/skills';
+import { entryPathLabel, getShiftScenario } from '../utils/api';
+
+const ENTRY_TITLE: Record<EntryPath, string> = {
+  degree: 'Usually needs school',
+  bootcamp: 'Bootcamp-friendly',
+  apprenticeship: 'Apprenticeship path',
+  portfolio: 'Portfolio path',
+  mixed: 'Multiple ways in',
+};
 
 interface CareerDetailsScreenProps {
   route: any;
   navigation: any;
 }
 
-const CareerDetailsScreen: React.FC<CareerDetailsScreenProps> = ({ route }) => {
-  const { career } = route.params as { career: Career };
-  const [selectedCompanySize, setSelectedCompanySize] = useState<CompanySize>('mid');
+const SIZE_LABELS: { key: CompanySize; label: string }[] = [
+  { key: 'startup', label: 'Startup' },
+  { key: 'mid', label: 'Mid-size' },
+  { key: 'enterprise', label: 'Enterprise' },
+];
 
-  const companySizeDetails = career.companySize[selectedCompanySize];
+const TOGGLE_PAD = 4;
+
+const workStyleChips = (ws: WorkStyle) => [
+  {
+    emoji: '🏡',
+    label: 'Remote',
+    value: { high: 'Very doable', medium: 'Sometimes', low: 'On-site' }[ws.remoteFriendly],
+  },
+  {
+    emoji: '🗓️',
+    label: 'Meetings',
+    value: { high: 'A lot', medium: 'Some', low: 'Barely any' }[ws.meetingLoad],
+  },
+  {
+    emoji: '⚡',
+    label: 'Pace',
+    value: { fast: 'Fast', steady: 'Steady', calm: 'Calm' }[ws.pace],
+  },
+  {
+    emoji: '💬',
+    label: 'People',
+    value: { high: 'People-heavy', medium: 'Balanced', low: 'Heads-down' }[ws.peopleFacing],
+  },
+];
+
+const CareerDetailsScreen: React.FC<CareerDetailsScreenProps> = ({ route, navigation }) => {
+  const { career, accent = COLORS.sticker.yellow } = route.params as {
+    career: Career;
+    accent?: string;
+  };
+  const shift = getShiftScenario(career.id);
+  const [size, setSize] = useState<CompanySize>('mid');
+  const sizeIndex = SIZE_LABELS.findIndex((s) => s.key === size);
+  const [trackW, setTrackW] = useState(0);
+  const slide = useRef(new Animated.Value(sizeIndex)).current;
+  const detail = career.companySize[size];
+  const badgeColor = characterTintForCard(accent);
+
+  useEffect(() => {
+    Animated.spring(slide, {
+      toValue: sizeIndex,
+      useNativeDriver: true,
+      friction: 9,
+      tension: 140,
+    }).start();
+  }, [sizeIndex, slide]);
+
+  const onTrackLayout = (e: LayoutChangeEvent) => {
+    setTrackW(e.nativeEvent.layout.width);
+  };
+
+  const segmentW = trackW > 0 ? (trackW - TOGGLE_PAD * 2) / SIZE_LABELS.length : 0;
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>{career.title}</Text>
-        <Text style={styles.category}>{career.category}</Text>
-        <Text style={styles.description}>{career.description}</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Required Skills</Text>
-        <View style={styles.skillsContainer}>
-          {career.skills.map((skill: string, index: number) => (
-            <View key={index} style={styles.skillBadge}>
-              <Text style={styles.skillText}>{skill}</Text>
-            </View>
-          ))}
+    <Screen>
+      <ScrollView
+        style={styles.flex}
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}>
+        <View style={styles.badgeRow}>
+          <WavyBadge label={career.category} color={badgeColor} />
         </View>
-      </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Company Size</Text>
-        <Text style={styles.sectionSubtitle}>
-          Choose a company size to see how this role varies
-        </Text>
-        <View style={styles.companySizeButtons}>
+        <View style={[styles.headerCard, { backgroundColor: accent }, shadow(6)]}>
+          <View style={styles.stickerWrap}>
+            <Character
+              sticker={CHARACTER[(career.primaryArchetype as Riasec) ?? 'R']?.piece}
+              color={characterTintForCard(accent)}
+              size={88}
+            />
+          </View>
+          <Text style={styles.title} allowFontScaling={false}>
+            {career.title}
+          </Text>
+          <Text style={styles.description}>{career.description}</Text>
+        </View>
+
+        {!!shift && (
           <TouchableOpacity
-            style={[
-              styles.sizeButton,
-              selectedCompanySize === 'startup' && styles.sizeButtonActive,
-            ]}
-            onPress={() => setSelectedCompanySize('startup')}>
-            <Text
-              style={[
-                styles.sizeButtonText,
-                selectedCompanySize === 'startup' && styles.sizeButtonTextActive,
-              ]}>
-              Startup
-            </Text>
+            activeOpacity={0.9}
+            style={[styles.shiftCard, shadow(4)]}
+            onPress={() => navigation.navigate('Shift', { career, accent })}>
+            <View style={styles.flex}>
+              <Text style={styles.shiftTitle}>Try a shift</Text>
+              <Text style={styles.shiftSub}>
+                Play two minutes of this job and see how it feels.
+              </Text>
+            </View>
+            <View style={styles.shiftPill}>
+              <Text style={styles.shiftPillText}>Clock in</Text>
+            </View>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.sizeButton,
-              selectedCompanySize === 'mid' && styles.sizeButtonActive,
-            ]}
-            onPress={() => setSelectedCompanySize('mid')}>
-            <Text
-              style={[
-                styles.sizeButtonText,
-                selectedCompanySize === 'mid' && styles.sizeButtonTextActive,
-              ]}>
-              Mid-Size
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[
-              styles.sizeButton,
-              selectedCompanySize === 'enterprise' && styles.sizeButtonActive,
-            ]}
-            onPress={() => setSelectedCompanySize('enterprise')}>
-            <Text
-              style={[
-                styles.sizeButtonText,
-                selectedCompanySize === 'enterprise' && styles.sizeButtonTextActive,
-              ]}>
-              Enterprise
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+        )}
 
-      <View style={styles.detailsCard}>
-        <Text style={styles.detailsDescription}>
-          {companySizeDetails.description}
-        </Text>
+        {!!career.entry && (
+          <>
+            <Text style={styles.sectionTitle}>How people get in</Text>
+            <View style={[styles.entryCard, shadow(2)]}>
+              <Text style={styles.entryPath}>
+                {ENTRY_TITLE[career.entry.path] ?? entryPathLabel(career.entry.path) ?? 'Entry path'}
+              </Text>
+              <Text style={styles.entryNote}>{career.entry.note}</Text>
+            </View>
+          </>
+        )}
 
-        <View style={styles.detailSection}>
-          <Text style={styles.detailSectionTitle}>Typical Tasks</Text>
-          {companySizeDetails.typicalTasks.map((task: string, index: number) => (
-            <View key={index} style={styles.listItem}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listItemText}>{task}</Text>
+        {!!career.proofProjects?.length && (
+          <>
+            <Text style={styles.sectionTitle}>Projects that prove it</Text>
+            <View style={styles.projects}>
+              {career.proofProjects.map((p) => (
+                <View key={p.title} style={[styles.projectRow, shadow(2)]}>
+                  <Text style={styles.projectTitle}>{p.title}</Text>
+                  <Text style={styles.projectBrief}>{p.brief}</Text>
+                </View>
+              ))}
+            </View>
+          </>
+        )}
+
+        <Text style={styles.sectionTitle}>The day-to-day vibe</Text>
+        <View style={styles.chipGrid}>
+          {workStyleChips(career.workStyle).map((chip) => (
+            <View key={chip.label} style={[styles.vibeChip, shadow(2)]}>
+              <Text style={styles.vibeEmoji}>{chip.emoji}</Text>
+              <View>
+                <Text style={styles.vibeLabel}>{chip.label}</Text>
+                <Text style={styles.vibeValue}>{chip.value}</Text>
+              </View>
             </View>
           ))}
         </View>
 
-        <View style={styles.detailSection}>
-          <Text style={styles.detailSectionTitle}>Pros</Text>
-          {companySizeDetails.pros.map((pro: string, index: number) => (
-            <View key={index} style={styles.listItem}>
-              <Text style={styles.proBullet}>✓</Text>
-              <Text style={styles.listItemText}>{pro}</Text>
+        <Text style={styles.sectionTitle}>Skills that help</Text>
+        <View style={styles.skills}>
+          {career.skills.map((skill) => (
+            <View key={skill} style={[styles.skillRow, shadow(2)]}>
+              <Text style={styles.skillName}>{skill}</Text>
+              <Text style={styles.skillDef}>{skillDefinition(skill)}</Text>
             </View>
           ))}
         </View>
 
-        <View style={styles.detailSection}>
-          <Text style={styles.detailSectionTitle}>Cons</Text>
-          {companySizeDetails.cons.map((con: string, index: number) => (
-            <View key={index} style={styles.listItem}>
-              <Text style={styles.conBullet}>✗</Text>
-              <Text style={styles.listItemText}>{con}</Text>
-            </View>
-          ))}
+        <Text style={styles.sectionTitle}>By company size</Text>
+        <View style={styles.toggle} onLayout={onTrackLayout}>
+          {segmentW > 0 && (
+            <Animated.View
+              pointerEvents="none"
+              style={[
+                styles.togglePill,
+                {
+                  width: segmentW,
+                  transform: [
+                    {
+                      translateX: slide.interpolate({
+                        inputRange: SIZE_LABELS.map((_, i) => i),
+                        outputRange: SIZE_LABELS.map((_, i) => i * segmentW),
+                      }),
+                    },
+                  ],
+                },
+              ]}
+            />
+          )}
+          {SIZE_LABELS.map(({ key, label }) => {
+            const active = size === key;
+            return (
+              <TouchableOpacity
+                key={key}
+                activeOpacity={0.9}
+                style={styles.toggleBtn}
+                onPress={() => setSize(key)}>
+                <Text style={[styles.toggleText, active && styles.toggleTextActive]}>{label}</Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
-        <View style={styles.salarySection}>
-          <Text style={styles.detailSectionTitle}>Salary Range</Text>
-          <Text style={styles.salaryText}>{career.salary[selectedCompanySize]}</Text>
+        <View style={[styles.detailCard, shadow(3)]}>
+          <Text style={styles.detailDesc}>{detail.description}</Text>
+
+          <Text style={styles.detailHeading}>Typical tasks</Text>
+          {detail.typicalTasks.map((t) => (
+            <Row key={t} bullet="•" text={t} />
+          ))}
+
+          <Text style={styles.detailHeading}>Pros</Text>
+          {detail.pros.map((p) => (
+            <Row key={p} bullet="✓" text={p} />
+          ))}
+
+          <Text style={styles.detailHeading}>Cons</Text>
+          {detail.cons.map((c) => (
+            <Row key={c} bullet="-" text={c} />
+          ))}
+
+          <View style={styles.salaryBox}>
+            <Text style={styles.salaryLabel}>Typical salary</Text>
+            <Text style={styles.salaryValue}>{career.salary[size]}</Text>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </Screen>
   );
 };
 
+const Row: React.FC<{ bullet: string; text: string }> = ({ bullet, text }) => (
+  <View style={styles.row}>
+    <Text style={styles.bullet}>{bullet}</Text>
+    <Text style={styles.rowText}>{text}</Text>
+  </View>
+);
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
+  flex: { flex: 1 },
+  scroll: {
+    paddingTop: 52, // clear transparent stack back button
+    paddingBottom: SPACING.xxl,
   },
-  header: {
-    backgroundColor: '#FFFFFF',
-    padding: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+  badgeRow: {
+    marginBottom: SPACING.md,
+  },
+  headerCard: {
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    marginBottom: SPACING.lg,
+  },
+  stickerWrap: {
+    alignSelf: 'flex-start',
+    marginBottom: SPACING.md,
   },
   title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#333',
-    marginBottom: 5,
-  },
-  category: {
-    fontSize: 16,
-    color: '#007AFF',
-    marginBottom: 15,
+    fontFamily: FONT.display,
+    fontSize: FONT.size.headline,
+    lineHeight: displayLineHeight(FONT.size.headline, FONT.leading.display),
+    color: COLORS.ink,
+    textTransform: 'uppercase',
   },
   description: {
-    fontSize: 16,
-    color: '#666',
-    lineHeight: 24,
+    fontFamily: FONT.body,
+    fontSize: FONT.size.bodyLg,
+    lineHeight: 26,
+    fontWeight: FONT.weight.medium as any,
+    color: COLORS.ink,
+    marginTop: SPACING.md,
   },
-  section: {
-    backgroundColor: '#FFFFFF',
-    padding: 20,
-    marginTop: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+  shiftCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.ink,
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    gap: SPACING.md,
+  },
+  shiftTitle: {
+    fontFamily: FONT.display,
+    fontSize: FONT.size.title,
+    lineHeight: Math.round(FONT.size.title * 1.35),
+    color: COLORS.white,
+    textTransform: 'uppercase',
+  },
+  shiftSub: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    lineHeight: 20,
+    fontWeight: FONT.weight.medium as any,
+    color: 'rgba(255, 255, 255, 0.8)',
+    marginTop: 4,
+  },
+  shiftPill: {
+    backgroundColor: COLORS.sticker.mustard,
+    borderRadius: RADIUS.pill,
+    paddingHorizontal: SPACING.lg,
+    paddingVertical: SPACING.sm + 2,
+  },
+  shiftPillText: {
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.body,
+    color: COLORS.ink,
+  },
+  entryCard: {
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+    padding: SPACING.md,
+    marginBottom: SPACING.sm,
+  },
+  entryPath: {
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.body,
+    color: COLORS.ink,
+    marginBottom: 6,
+  },
+  entryNote: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.body,
+    lineHeight: 22,
+    color: COLORS.inkSoft,
+  },
+  projects: {
+    gap: SPACING.sm,
+    marginBottom: SPACING.sm,
+  },
+  projectRow: {
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.md,
+  },
+  projectTitle: {
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.body,
+    color: COLORS.ink,
+    marginBottom: 4,
+  },
+  projectBrief: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    lineHeight: 20,
+    color: COLORS.inkSoft,
   },
   sectionTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 5,
+    fontFamily: FONT.display,
+    fontSize: FONT.size.title,
+    lineHeight: Math.round(FONT.size.title * 1.35),
+    color: COLORS.ink,
+    textTransform: 'uppercase',
+    marginTop: SPACING.xl,
+    marginBottom: SPACING.md,
   },
-  sectionSubtitle: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 15,
-  },
-  skillsContainer: {
+  chipGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 10,
+    gap: SPACING.md,
   },
-  skillBadge: {
-    backgroundColor: '#E3F2FD',
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    borderRadius: 16,
-  },
-  skillText: {
-    color: '#1976D2',
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  companySizeButtons: {
+  vibeChip: {
     flexDirection: 'row',
-    gap: 10,
-  },
-  sizeButton: {
-    flex: 1,
-    padding: 12,
-    backgroundColor: '#F5F5F5',
-    borderRadius: 8,
-    borderWidth: 2,
-    borderColor: '#E0E0E0',
     alignItems: 'center',
+    gap: SPACING.sm,
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.lg,
+    paddingVertical: SPACING.md,
+    paddingHorizontal: SPACING.md,
+    width: '47%',
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
   },
-  sizeButtonActive: {
-    backgroundColor: '#007AFF',
-    borderColor: '#007AFF',
+  vibeEmoji: { fontSize: 22 },
+  vibeLabel: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    fontWeight: FONT.weight.medium as any,
+    color: COLORS.inkFaint,
   },
-  sizeButtonText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#666',
+  vibeValue: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.body,
+    fontWeight: FONT.weight.semibold as any,
+    color: COLORS.ink,
   },
-  sizeButtonTextActive: {
-    color: '#FFFFFF',
+  skills: {
+    gap: SPACING.sm,
+    marginBottom: SPACING.sm,
   },
-  detailsCard: {
-    backgroundColor: '#FFFFFF',
-    padding: 20,
-    marginTop: 10,
+  skillRow: {
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.lg,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.md,
   },
-  detailsDescription: {
-    fontSize: 16,
-    color: '#333',
-    lineHeight: 24,
-    marginBottom: 20,
+  skillName: {
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.body,
+    color: COLORS.ink,
+    marginBottom: 4,
   },
-  detailSection: {
-    marginBottom: 20,
+  skillDef: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    lineHeight: 20,
+    color: COLORS.inkSoft,
   },
-  detailSectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 10,
-  },
-  listItem: {
+  toggle: {
+    position: 'relative',
     flexDirection: 'row',
-    marginBottom: 8,
-    paddingRight: 10,
+    backgroundColor: COLORS.surfaceAlt,
+    borderRadius: RADIUS.pill,
+    padding: TOGGLE_PAD,
+    marginBottom: SPACING.lg,
+  },
+  togglePill: {
+    position: 'absolute',
+    top: TOGGLE_PAD,
+    bottom: TOGGLE_PAD,
+    left: TOGGLE_PAD,
+    borderRadius: RADIUS.pill,
+    backgroundColor: COLORS.ink,
+  },
+  toggleBtn: {
+    flex: 1,
+    paddingVertical: SPACING.sm + 4,
+    borderRadius: RADIUS.pill,
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  toggleText: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    fontWeight: FONT.weight.semibold as any,
+    color: COLORS.inkSoft,
+  },
+  toggleTextActive: {
+    color: COLORS.white,
+  },
+  detailCard: {
+    backgroundColor: COLORS.surface,
+    borderRadius: RADIUS.xl,
+    padding: SPACING.lg,
+    marginBottom: SPACING.xxl,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+  },
+  detailDesc: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.body,
+    lineHeight: 24,
+    fontWeight: FONT.weight.medium as any,
+    color: COLORS.ink,
+    marginBottom: SPACING.md,
+  },
+  detailHeading: {
+    fontFamily: FONT.display,
+    fontSize: 13,
+    color: COLORS.ink,
+    textTransform: 'uppercase',
+    marginTop: SPACING.md,
+    marginBottom: SPACING.sm,
+  },
+  row: {
+    flexDirection: 'row',
+    marginBottom: SPACING.sm,
   },
   bullet: {
-    fontSize: 16,
-    color: '#666',
-    marginRight: 10,
-    width: 20,
+    fontSize: FONT.size.body,
+    marginRight: SPACING.sm,
+    width: 18,
+    color: COLORS.inkSoft,
+    fontWeight: FONT.weight.bold as any,
   },
-  proBullet: {
-    fontSize: 16,
-    color: '#4CAF50',
-    marginRight: 10,
-    width: 20,
-  },
-  conBullet: {
-    fontSize: 16,
-    color: '#F44336',
-    marginRight: 10,
-    width: 20,
-  },
-  listItemText: {
-    fontSize: 15,
-    color: '#666',
-    lineHeight: 22,
+  rowText: {
     flex: 1,
+    fontFamily: FONT.body,
+    fontSize: FONT.size.body,
+    lineHeight: 22,
+    fontWeight: FONT.weight.medium as any,
+    color: COLORS.inkSoft,
   },
-  salarySection: {
-    marginTop: 10,
-    padding: 15,
-    backgroundColor: '#F5F5F5',
-    borderRadius: 8,
+  salaryBox: {
+    marginTop: SPACING.lg,
+    backgroundColor: COLORS.sticker.yellow,
+    borderRadius: RADIUS.lg,
+    padding: SPACING.md,
   },
-  salaryText: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#4CAF50',
+  salaryLabel: {
+    fontFamily: FONT.body,
+    fontSize: FONT.size.caption,
+    color: COLORS.inkSoft,
+    fontWeight: FONT.weight.semibold as any,
+    textTransform: 'uppercase',
+  },
+  salaryValue: {
+    fontFamily: FONT.display,
+    fontSize: FONT.size.title,
+    color: COLORS.ink,
+    marginTop: 4,
+    textTransform: 'uppercase',
   },
 });
 

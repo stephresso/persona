@@ -12,10 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3F1910CD2C0D5CA4002613D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F1910CC2C0D5CA4002613D6 /* GoogleService-Info.plist */; };
+		7044C2E95C06494B98566728 /* Boldonse-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56A5E9BBFA684BFCB3ED7DE9 /* Boldonse-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-PersonaApp-PersonaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PersonaApp-PersonaAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9B4FB25056384690AE4F4717 /* Boldonse-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56A5E9BBFA684BFCB3ED7DE9 /* Boldonse-Regular.ttf */; };
+		9BC9061467CD49569784B4D2 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 258EBF4E73E241679B7E9662 /* Manrope-Medium.ttf */; };
 		AA613319E5F14649DB680EBD /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CA136ACF9058855588C5CEEA /* PrivacyInfo.xcprivacy */; };
+		AC2955FE7CA14442812BCC5D /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C1BD1630E324590850CD6A0 /* Manrope-SemiBold.ttf */; };
+		BBFD759AB9344625B633991D /* Manrope-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C1BD1630E324590850CD6A0 /* Manrope-SemiBold.ttf */; };
+		CDC8590C77B645FC843B93B4 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 258EBF4E73E241679B7E9662 /* Manrope-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +45,15 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PersonaApp/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = PersonaApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-PersonaApp-PersonaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonaApp-PersonaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		258EBF4E73E241679B7E9662 /* Manrope-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-Medium.ttf"; path = "../assets/fonts/Manrope-Medium.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-PersonaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonaApp.debug.xcconfig"; path = "Target Support Files/Pods-PersonaApp/Pods-PersonaApp.debug.xcconfig"; sourceTree = "<group>"; };
-		3F1910CC2C0D5CA4002613D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56A5E9BBFA684BFCB3ED7DE9 /* Boldonse-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Boldonse-Regular.ttf"; path = "../assets/fonts/Boldonse-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-PersonaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonaApp.release.xcconfig"; path = "Target Support Files/Pods-PersonaApp/Pods-PersonaApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-PersonaApp-PersonaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonaApp-PersonaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PersonaApp-PersonaAppTests/Pods-PersonaApp-PersonaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-PersonaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PersonaApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PersonaApp-PersonaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonaApp-PersonaAppTests.release.xcconfig"; path = "Target Support Files/Pods-PersonaApp-PersonaAppTests/Pods-PersonaApp-PersonaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C1BD1630E324590850CD6A0 /* Manrope-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope-SemiBold.ttf"; path = "../assets/fonts/Manrope-SemiBold.ttf"; sourceTree = "<group>"; };
 		CA136ACF9058855588C5CEEA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = PersonaApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -91,7 +98,6 @@
 		13B07FAE1A68108700A75B9A /* PersonaApp */ = {
 			isa = PBXGroup;
 			children = (
-				3F1910CC2C0D5CA4002613D6 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -130,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				9A94E3BA282C4029BE21200D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -143,6 +150,17 @@
 				00E356EE1AD99517003FC87E /* PersonaAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9A94E3BA282C4029BE21200D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56A5E9BBFA684BFCB3ED7DE9 /* Boldonse-Regular.ttf */,
+				258EBF4E73E241679B7E9662 /* Manrope-Medium.ttf */,
+				8C1BD1630E324590850CD6A0 /* Manrope-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -246,6 +264,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7044C2E95C06494B98566728 /* Boldonse-Regular.ttf in Resources */,
+				9BC9061467CD49569784B4D2 /* Manrope-Medium.ttf in Resources */,
+				BBFD759AB9344625B633991D /* Manrope-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				3F1910CD2C0D5CA4002613D6 /* GoogleService-Info.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				AA613319E5F14649DB680EBD /* PrivacyInfo.xcprivacy in Resources */,
+				9B4FB25056384690AE4F4717 /* Boldonse-Regular.ttf in Resources */,
+				CDC8590C77B645FC843B93B4 /* Manrope-Medium.ttf in Resources */,
+				AC2955FE7CA14442812BCC5D /* Manrope-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +455,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PersonaAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +479,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PersonaAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD = "";
 				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -599,7 +622,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -651,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD = "";
 				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -672,7 +698,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

@@ -1,0 +1,228 @@
+{
+  "colorStyles": [
+    {
+      "id": "fec54a0f-b48a-4621-bb40-b65ae315983a",
+      "name": "Background",
+      "path": "/Background",
+      "light": "rgb(249, 241, 221)",
+      "dark": null
+    },
+    {
+      "id": "fbb1ae94-c7ad-4389-a75c-5409c60262b0",
+      "name": "Blue",
+      "path": "/Blue",
+      "light": "rgb(185, 219, 253)",
+      "dark": null
+    },
+    {
+      "id": "eeb42703-795b-49b5-bef3-776961cd0eed",
+      "name": "Violet",
+      "path": "/Violet",
+      "light": "rgb(201, 202, 248)",
+      "dark": null
+    },
+    {
+      "id": "a18c0b0e-594e-4280-b27f-f79294d73ede",
+      "name": "Pink",
+      "path": "/Pink",
+      "light": "rgb(255, 149, 195)",
+      "dark": null
+    },
+    {
+      "id": "1c2ee5c8-7f1f-4540-a3a5-774579bc6b96",
+      "name": "Orange",
+      "path": "/Orange",
+      "light": "rgb(246, 112, 15)",
+      "dark": null
+    },
+    {
+      "id": "c8c60e0e-6c8e-4190-a77c-eb3d264b70f5",
+      "name": "Yellow",
+      "path": "/Yellow",
+      "light": "rgb(249, 228, 124)",
+      "dark": null
+    },
+    {
+      "id": "857b7a5f-53fc-4af2-9aad-b7952b5585da",
+      "name": "Green",
+      "path": "/Green",
+      "light": "rgb(214, 222, 103)",
+      "dark": null
+    },
+    {
+      "id": "7c32bd99-ca30-47a9-a4db-6b273b14ea61",
+      "name": "Title",
+      "path": "/Title",
+      "light": "rgb(85, 45, 36)",
+      "dark": null
+    },
+    {
+      "id": "3c958d93-9124-4352-a32c-ab43c3509f11",
+      "name": "Black",
+      "path": "/Black",
+      "light": "rgb(31, 31, 31)",
+      "dark": null
+    },
+    {
+      "id": "2468bfb9-b7ab-4fd4-aff6-98ab546ced26",
+      "name": "White",
+      "path": "/White",
+      "light": "rgb(255, 255, 255)",
+      "dark": null
+    },
+    {
+      "id": "39e69491-28e7-4a40-89fc-b9102dd357f4",
+      "name": "Cream",
+      "path": "/Cream",
+      "light": "rgb(213, 205, 185)",
+      "dark": null
+    },
+    {
+      "id": "21181e34-dcb3-42be-acc8-fb93abef5653",
+      "name": "White 1%",
+      "path": "/White 1%",
+      "light": "rgba(255, 255, 255, 0.01)",
+      "dark": null
+    },
+    {
+      "id": "8e229806-21b6-435e-849c-2422c9834df1",
+      "name": "White-45%",
+      "path": "/White-45%",
+      "light": "rgba(255, 255, 255, 0.45)",
+      "dark": null
+    },
+    {
+      "id": "49ea5c8e-2516-4d9b-8d22-c5d74a9b4eee",
+      "name": "Red 15%",
+      "path": "/Red 15%",
+      "light": "rgba(255, 34, 68, 0.15)",
+      "dark": null
+    },
+    {
+      "id": "2a54b07b-7070-45d9-9bbe-653de0b4f23b",
+      "name": "Black",
+      "path": "/Black",
+      "light": "rgb(9, 9, 11)",
+      "dark": null
+    },
+    {
+      "id": "090f6fcc-9ecb-454b-9628-bc5573078a7c",
+      "name": "Wornimg",
+      "path": "/Wornimg",
+      "light": "rgb(255, 34, 68)",
+      "dark": null
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "Heading 1",
+      "font": "Boldonse",
+      "fontSize": "154px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Heading 2",
+      "font": "Boldonse",
+      "fontSize": "88px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "135%"
+    },
+    {
+      "name": "Heading 2-104px",
+      "font": "Boldonse",
+      "fontSize": "104px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Heading 4",
+      "font": "Boldonse",
+      "fontSize": "52px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "letterSpacing": "0px",
+      "lineHeight": "130%"
+    },
+    {
+      "name": "Heading 5",
+      "font": "Boldonse",
+      "fontSize": "40px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "150%"
+    },
+    {
+      "name": "Heading 6",
+      "font": "Boldonse",
+      "fontSize": "28px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "150%"
+    },
+    {
+      "name": "Body-24px-Regular",
+      "font": "Boldonse",
+      "fontSize": "24px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Span-158px",
+      "font": "Boldonse",
+      "fontSize": "158px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "140%"
+    },
+    {
+      "name": "Body-16px-Medium",
+      "font": "Manrope",
+      "fontSize": "16px",
+      "weight": 500,
+      "transform": "none",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "150%"
+    },
+    {
+      "name": "Body-18px-SemiBold",
+      "font": "Manrope",
+      "fontSize": "18px",
+      "weight": 600,
+      "transform": "none",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "150%"
+    },
+    {
+      "name": "Body-14px-Regular",
+      "font": "Boldonse",
+      "fontSize": "14px",
+      "weight": 400,
+      "transform": "uppercase",
+      "color": "rgb(85, 45, 36)",
+      "letterSpacing": "0px",
+      "lineHeight": "140%"
+    }
+  ]
+}

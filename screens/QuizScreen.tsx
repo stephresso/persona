@@ -4,11 +4,14 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  ScrollView,
   ActivityIndicator,
+  ScrollView,
 } from 'react-native';
 import { fetchQuestions, submitQuizResponses } from '../utils/api';
-import { Question } from '../types';
+import { Question, QuestionOption } from '../types';
+import { COLORS, SPACING, FONT, RADIUS } from '../constants/theme';
+import Screen from '../components/Screen';
+import OptionCard from '../components/OptionCard';
 
 interface QuizScreenProps {
   navigation: any;
@@ -16,9 +19,10 @@ interface QuizScreenProps {
 
 const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [responses, setResponses] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [responses, setResponses] = useState<QuestionOption[]>([]);
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,181 +30,195 @@ const QuizScreen: React.FC<QuizScreenProps> = ({ navigation }) => {
   }, []);
 
   const loadQuestions = async () => {
+    setLoading(true);
+    setError(null);
     try {
-      const data = await fetchQuestions();
-      setQuestions(data);
-    } catch (err) {
-      setError('Failed to load questions. Please try again.');
-      console.error('Error fetching questions:', err);
+      setQuestions(await fetchQuestions());
+    } catch {
+      setError('Something went wrong loading the quiz.');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleAnswer = async (answerText: string) => {
-    const newResponses = [...responses, answerText];
-    setResponses(newResponses);
-
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+  const handleAnswer = async (option: QuestionOption) => {
+    const next = [...responses, option];
+    setResponses(next);
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     } else {
-      // Submit quiz
+      setSubmitting(true);
       try {
-        const result = await submitQuizResponses(newResponses);
-        navigation.navigate('Results', { archetype: result.archetype });
-      } catch (err) {
-        setError('Failed to submit quiz. Please try again.');
-        console.error('Error submitting quiz:', err);
+        const { archetype } = await submitQuizResponses(next);
+        navigation.replace('Results', { archetype });
+      } catch {
+        setError('Could not score your quiz. Please try again.');
+        setSubmitting(false);
       }
     }
   };
 
   const goBack = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
       setResponses(responses.slice(0, -1));
+    } else {
+      navigation.goBack();
     }
   };
 
-  if (loading) {
+  if (loading || submitting || error) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#007AFF" />
-      </View>
+      <Screen background={COLORS.background} center>
+        <View style={styles.centered}>
+          {error ? (
+            <>
+              <Text style={styles.loadingText}>{error}</Text>
+              <TouchableOpacity style={styles.retry} onPress={loadQuestions}>
+                <Text style={styles.retryText}>Try again</Text>
+              </TouchableOpacity>
+            </>
+          ) : (
+            <>
+              <ActivityIndicator color={COLORS.ink} size="large" />
+              <Text style={styles.loadingText}>
+                {submitting ? 'Reading your vibe…' : 'Loading…'}
+              </Text>
+            </>
+          )}
+        </View>
+      </Screen>
     );
   }
 
-  if (error || questions.length === 0) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.errorText}>{error || 'No questions available'}</Text>
-        <TouchableOpacity style={styles.retryButton} onPress={loadQuestions}>
-          <Text style={styles.retryButtonText}>Retry</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  const currentQuestion = questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const q = questions[currentIndex];
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.questionNumber}>
-          Question {currentQuestionIndex + 1} of {questions.length}
-        </Text>
-        <View style={styles.progressBar}>
-          <View style={[styles.progressFill, { width: `${progress}%` }]} />
-        </View>
-      </View>
-
-      <Text style={styles.questionText}>{currentQuestion.question}</Text>
-
-      <View style={styles.optionsContainer}>
-        {currentQuestion.options.map((option, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.optionButton}
-            onPress={() => handleAnswer(option.text)}
-            activeOpacity={0.7}>
-            <Text style={styles.optionText}>{option.text}</Text>
-          </TouchableOpacity>
+    <Screen background={COLORS.background}>
+      <View style={styles.segments}>
+        {questions.map((_, i) => (
+          <View key={i} style={styles.segTrack}>
+            <View
+              style={[
+                styles.segFill,
+                { width: i <= currentIndex ? '100%' : '0%' },
+              ]}
+            />
+          </View>
         ))}
       </View>
 
-      {currentQuestionIndex > 0 && (
-        <TouchableOpacity style={styles.backButton} onPress={goBack}>
-          <Text style={styles.backButtonText}>Previous Question</Text>
+      <View style={styles.topRow}>
+        <TouchableOpacity onPress={goBack} hitSlop={{ top: 14, bottom: 14, left: 14, right: 14 }}>
+          <View style={styles.backCircle}>
+            <Text style={styles.back}>‹</Text>
+          </View>
         </TouchableOpacity>
-      )}
-    </ScrollView>
+        <Text style={styles.counter}>
+          {currentIndex + 1} / {questions.length}
+        </Text>
+        <View style={{ width: 40 }} />
+      </View>
+
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}>
+        <View style={styles.questionWrap}>
+          <Text style={styles.question}>{q.question}</Text>
+        </View>
+
+        <View style={styles.options}>
+          {q.options.map((option, index) => (
+            <OptionCard
+              key={index}
+              index={index}
+              emoji={option.emoji}
+              label={option.text}
+              onPress={() => handleAnswer(option)}
+            />
+          ))}
+        </View>
+      </ScrollView>
+    </Screen>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-  },
-  header: {
-    marginBottom: 30,
-  },
-  questionNumber: {
-    fontSize: 16,
-    color: '#666',
-    marginBottom: 10,
-  },
-  progressBar: {
-    height: 8,
-    backgroundColor: '#E0E0E0',
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    backgroundColor: '#007AFF',
-  },
-  questionText: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 30,
-    lineHeight: 32,
-  },
-  optionsContainer: {
-    gap: 12,
-  },
-  optionButton: {
-    backgroundColor: '#FFFFFF',
-    padding: 20,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#E0E0E0',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  optionText: {
-    fontSize: 16,
-    color: '#333',
-    lineHeight: 22,
-  },
-  backButton: {
-    marginTop: 20,
-    padding: 15,
-    alignItems: 'center',
-  },
-  backButtonText: {
-    fontSize: 16,
-    color: '#007AFF',
-  },
-  errorText: {
-    fontSize: 18,
-    color: '#FF3B30',
+  centered: { alignItems: 'center', justifyContent: 'center' },
+  loadingText: {
+    color: COLORS.ink,
+    fontFamily: FONT.body,
+    fontSize: FONT.size.bodyLg,
+    marginTop: SPACING.lg,
     textAlign: 'center',
   },
-  retryButton: {
-    marginTop: 20,
-    padding: 15,
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    alignSelf: 'center',
+  retry: {
+    marginTop: SPACING.lg,
+    backgroundColor: COLORS.ink,
+    borderRadius: RADIUS.pill,
+    paddingHorizontal: SPACING.xl,
+    paddingVertical: SPACING.md,
   },
-  retryButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
+  retryText: {
+    color: COLORS.white,
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.body,
   },
+  segments: { flexDirection: 'row', gap: 4, marginTop: SPACING.sm },
+  segTrack: {
+    flex: 1,
+    height: 4,
+    borderRadius: RADIUS.pill,
+    backgroundColor: COLORS.surfaceAlt,
+    overflow: 'hidden',
+  },
+  segFill: {
+    height: '100%',
+    borderRadius: RADIUS.pill,
+    backgroundColor: COLORS.ink,
+  },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: SPACING.md,
+    marginBottom: SPACING.sm,
+  },
+  backCircle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: COLORS.surface,
+    borderWidth: 1.5,
+    borderColor: COLORS.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  back: { color: COLORS.ink, fontSize: 28, marginTop: -2 },
+  counter: {
+    color: COLORS.inkSoft,
+    fontFamily: FONT.bodySemi,
+    fontSize: FONT.size.caption,
+  },
+  scroll: { flex: 1 },
+  scrollContent: {
+    flexGrow: 1,
+    paddingTop: SPACING.xl + 8,
+    paddingBottom: SPACING.xl,
+  },
+  questionWrap: {
+    paddingBottom: SPACING.lg,
+  },
+  question: {
+    color: COLORS.ink,
+    fontFamily: FONT.display,
+    fontSize: 28,
+    lineHeight: 40,
+    textTransform: 'uppercase',
+    paddingTop: 4,
+  },
+  options: { gap: 12, marginTop: SPACING.sm },
 });
 
 export default QuizScreen;

@@ -1,125 +1,278 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, Text, StyleSheet, Animated, Easing } from 'react-native';
+import { COLORS, SPACING, FONT, displayLineHeight } from '../constants/theme';
+import PrimaryButton from '../components/PrimaryButton';
+import Screen from '../components/Screen';
+import { WavyBadge } from '../components/Shapes';
+import FloatingSticker from '../components/FloatingSticker';
 
 interface WelcomeScreenProps {
   navigation: any;
 }
 
+const TITLE_LINES = ['What are', 'you meant', 'to do?'];
+
+/** Baristi Heading 5 size + Heading 2 leading (135%) — room for tall O/Q. */
+const HERO_SIZE = FONT.size.hero;
+const HERO_LH = displayLineHeight(HERO_SIZE, FONT.leading.display);
+
+/**
+ * Home collage — Baristi type density + soft badge,
+ * stickers rotate in place (orange on the ?).
+ */
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
+  const badge = useRef(new Animated.Value(0)).current;
+  const lines = useRef(TITLE_LINES.map(() => new Animated.Value(0))).current;
+  const sub = useRef(new Animated.Value(0)).current;
+  const cta = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.spring(badge, {
+      toValue: 1,
+      friction: 8,
+      tension: 90,
+      delay: 80,
+      useNativeDriver: true,
+    }).start();
+
+    Animated.stagger(
+      90,
+      lines.map(v =>
+        Animated.spring(v, {
+          toValue: 1,
+          friction: 8,
+          tension: 90,
+          useNativeDriver: true,
+        }),
+      ),
+    ).start();
+
+    Animated.timing(sub, {
+      toValue: 1,
+      duration: 420,
+      delay: 420,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: true,
+    }).start();
+
+    Animated.spring(cta, {
+      toValue: 1,
+      friction: 9,
+      tension: 80,
+      delay: 520,
+      useNativeDriver: true,
+    }).start();
+  }, [badge, lines, sub, cta]);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Persona</Text>
-        <Text style={styles.subtitle}>
-          Discover careers that match your personality
-        </Text>
+    <Screen contentStyle={styles.screen}>
+      <Text style={styles.wordmark} allowFontScaling={false}>
+        PERSONA
+      </Text>
 
-        <View style={styles.featuresContainer}>
-          <View style={styles.feature}>
-            <Text style={styles.featureIcon}>📋</Text>
-            <Text style={styles.featureTitle}>Take the Quiz</Text>
-            <Text style={styles.featureDescription}>
-              Answer 10 questions to discover your personality type
-            </Text>
-          </View>
+      <View style={styles.hero}>
+        <Animated.View
+          style={[
+            styles.badge,
+            {
+              opacity: badge,
+              transform: [
+                {
+                  scale: badge.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0.92, 1],
+                  }),
+                },
+                {
+                  rotate: badge.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ['-5deg', '-3deg'],
+                  }),
+                },
+              ],
+            },
+          ]}>
+          <WavyBadge label="Career quiz" color={COLORS.sticker.sky} />
+        </Animated.View>
 
-          <View style={styles.feature}>
-            <Text style={styles.featureIcon}>🎯</Text>
-            <Text style={styles.featureTitle}>Get Matched</Text>
-            <Text style={styles.featureDescription}>
-              Find careers that align with your strengths and traits
-            </Text>
-          </View>
+        <View style={styles.typeBlock}>
+          {TITLE_LINES.map((line, i) => {
+            const isLast = i === TITLE_LINES.length - 1;
+            return (
+              <View key={line} style={styles.lineRow}>
+                <Animated.Text
+                  allowFontScaling={false}
+                  style={[
+                    styles.titleLine,
+                    {
+                      opacity: lines[i],
+                      transform: [
+                        {
+                          translateY: lines[i].interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [10, 0],
+                          }),
+                        },
+                      ],
+                    },
+                  ]}>
+                  {isLast ? 'to do' : line}
+                </Animated.Text>
+                {isLast ? (
+                  <>
+                    <Animated.Text
+                      allowFontScaling={false}
+                      style={[
+                        styles.titleLine,
+                        {
+                          opacity: lines[i],
+                          transform: [
+                            {
+                              translateY: lines[i].interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [10, 0],
+                              }),
+                            },
+                          ],
+                        },
+                      ]}>
+                      ?
+                    </Animated.Text>
+                    <FloatingSticker
+                      sticker="scallop"
+                      color={COLORS.sticker.coral}
+                      size={48}
+                      delay={480}
+                      tilt={-14}
+                      rock={4}
+                      style={styles.onQuestion}
+                    />
+                  </>
+                ) : null}
+              </View>
+            );
+          })}
 
-          <View style={styles.feature}>
-            <Text style={styles.featureIcon}>💼</Text>
-            <Text style={styles.featureTitle}>Explore Options</Text>
-            <Text style={styles.featureDescription}>
-              Learn how roles vary across different company sizes
-            </Text>
-          </View>
+          <FloatingSticker
+            sticker="arch"
+            color={COLORS.sticker.mustard}
+            size={60}
+            delay={380}
+            tilt={14}
+            rock={5}
+            style={styles.arch}
+          />
         </View>
 
-        <TouchableOpacity
-          style={styles.startButton}
-          onPress={() => navigation.navigate('Quiz')}
-          activeOpacity={0.8}>
-          <Text style={styles.startButtonText}>Start Quiz</Text>
-        </TouchableOpacity>
+        <Animated.Text
+          style={[
+            styles.subtitle,
+            {
+              opacity: sub,
+              transform: [
+                {
+                  translateY: sub.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [12, 0],
+                  }),
+                },
+              ],
+            },
+          ]}>
+          A short personality quiz that matches you with careers that feel right.
+        </Animated.Text>
+
+        <Animated.View
+          style={{
+            opacity: cta,
+            transform: [
+              {
+                translateY: cta.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [14, 0],
+                }),
+              },
+            ],
+          }}>
+          <PrimaryButton
+            label="Take the quiz"
+            hug
+            onPress={() => navigation.navigate('Quiz')}
+            style={styles.cta}
+          />
+        </Animated.View>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
+  screen: {
+    overflow: 'visible',
+    paddingBottom: 110,
   },
-  content: {
+  wordmark: {
+    fontFamily: FONT.display,
+    fontSize: 14,
+    lineHeight: displayLineHeight(14, 1.4),
+    color: COLORS.ink,
+    marginTop: SPACING.lg,
+    textTransform: 'uppercase',
+    zIndex: 1,
+  },
+  hero: {
     flex: 1,
-    padding: 30,
     justifyContent: 'center',
+    zIndex: 1,
+    overflow: 'visible',
   },
-  title: {
-    fontSize: 52,
-    fontWeight: '700',
-    color: '#007AFF',
-    marginBottom: 10,
-    textAlign: 'center',
-    letterSpacing: 1,
+  badge: {
+    marginBottom: SPACING.md,
+    alignSelf: 'flex-start',
+  },
+  typeBlock: {
+    position: 'relative',
+    marginRight: 48,
+    marginBottom: SPACING.md,
+    overflow: 'visible',
+    // tiny headroom for first-line Boldonse ink (not per-line padding)
+    paddingTop: 2,
+  },
+  lineRow: {
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    alignSelf: 'flex-start',
+    overflow: 'visible',
+  },
+  titleLine: {
+    fontFamily: FONT.display,
+    fontSize: HERO_SIZE,
+    lineHeight: HERO_LH,
+    color: COLORS.ink,
+    textTransform: 'uppercase',
+  },
+  onQuestion: {
+    marginLeft: -10,
+    marginTop: -12,
+    zIndex: 3,
+  },
+  arch: {
+    position: 'absolute',
+    right: -56,
+    top: -20,
+    zIndex: 2,
   },
   subtitle: {
-    fontSize: 18,
-    color: '#666',
-    textAlign: 'center',
-    marginBottom: 50,
+    fontFamily: FONT.body,
+    fontSize: FONT.size.bodyLg,
+    lineHeight: displayLineHeight(FONT.size.bodyLg, 1.5),
+    color: COLORS.inkSoft,
+    maxWidth: 280,
+    marginBottom: SPACING.md,
   },
-  featuresContainer: {
-    marginBottom: 40,
-  },
-  feature: {
-    marginBottom: 30,
-    alignItems: 'center',
-  },
-  featureIcon: {
-    fontSize: 40,
-    marginBottom: 10,
-  },
-  featureTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 5,
-  },
-  featureDescription: {
-    fontSize: 14,
-    color: '#666',
-    textAlign: 'center',
-    paddingHorizontal: 20,
-    lineHeight: 20,
-  },
-  startButton: {
-    backgroundColor: '#007AFF',
-    padding: 18,
-    borderRadius: 12,
-    alignItems: 'center',
-    shadowColor: '#007AFF',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  startButtonText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#FFFFFF',
+  cta: {
+    marginTop: 2,
   },
 });
 

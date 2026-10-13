@@ -1,18 +1,498 @@
 {
-    "archetypes": [
-      "Problem Solver",
-      "Innovator",
-      "Leader",
-      "Analyst"
-    ],
-    "questions": [
-      {
-        "question": "When faced with a challenge, I...",
-        "options": ["Analyze it thoroughly", "Look for creative solutions", "Take charge", "Research extensively"]
-      },
-      {
-        "question": "When cooking a recipe I...",
-        "options": ["Follow the instructions precisely", "Look at the picture and wing it", "Taste as I go and adjust"]
-      }
-    ]
-  }
+  "archetypes": [
+    {
+      "id": "R",
+      "name": "The Maker",
+      "emoji": "🛠️",
+      "color": "#D5CDB9",
+      "tagline": "You'd rather build it than talk about it.",
+      "description": "Hands-on and practical, you love seeing real results. Tools can mean a wrench, a keyboard, or directing AI to ship something - work you can point at and say 'I made that.'",
+      "traits": [
+        "Hands-on",
+        "Practical",
+        "Independent",
+        "Resourceful"
+      ]
+    },
+    {
+      "id": "I",
+      "name": "The Investigator",
+      "emoji": "🔬",
+      "color": "#B9DBFD",
+      "tagline": "You have to know how it actually works.",
+      "description": "Curious and analytical, you love solving puzzles and digging into ideas. You'd happily go down a research rabbit hole and come out with the answer nobody else found.",
+      "traits": [
+        "Curious",
+        "Analytical",
+        "Precise",
+        "Deep-thinker"
+      ]
+    },
+    {
+      "id": "A",
+      "name": "The Creator",
+      "emoji": "🎨",
+      "color": "#F9E47C",
+      "tagline": "You make things that didn't exist before.",
+      "description": "Expressive and original, you think in images, sounds, and ideas. You need freedom to improvise and a space to make things that feel like you.",
+      "traits": [
+        "Creative",
+        "Expressive",
+        "Original",
+        "Imaginative"
+      ]
+    },
+    {
+      "id": "S",
+      "name": "The Connector",
+      "emoji": "💛",
+      "color": "#FF95C3",
+      "tagline": "You're happiest when you're helping someone.",
+      "description": "Warm and people-first, you're the one friends come to. You feel most fulfilled when your work directly helps, teaches, or heals real people.",
+      "traits": [
+        "Empathetic",
+        "Supportive",
+        "Great listener",
+        "Collaborative"
+      ]
+    },
+    {
+      "id": "E",
+      "name": "The Trailblazer",
+      "emoji": "🚀",
+      "color": "#C9CAF8",
+      "tagline": "You see the big picture and go get it.",
+      "description": "Bold and persuasive, you love leading, pitching, and growing things. You're energized by competition, ownership, and turning a vision into reality.",
+      "traits": [
+        "Ambitious",
+        "Persuasive",
+        "Confident",
+        "Big-picture"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "The Organizer",
+      "emoji": "📊",
+      "color": "#D6DE67",
+      "tagline": "You turn chaos into a clean system.",
+      "description": "Structured and reliable, you love order, accuracy, and a good plan. People trust you to keep the details straight and the trains running on time.",
+      "traits": [
+        "Organized",
+        "Detail-oriented",
+        "Reliable",
+        "Methodical"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "question": "It's a totally free Saturday. What sounds fun?",
+      "options": [
+        {
+          "text": "Building or fixing something - hands, code, or AI",
+          "emoji": "🔧",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "Falling down a research rabbit hole",
+          "emoji": "🔍",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "Making art, music, or editing videos",
+          "emoji": "🎨",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "Helping a friend through something",
+          "emoji": "💬",
+          "weights": {
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "In a group project, you naturally become the…",
+      "options": [
+        {
+          "text": "One who pitches the vision and rallies everyone",
+          "emoji": "🚀",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "One who organizes the doc, deadlines, and checklist",
+          "emoji": "📋",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "One who makes it actually look good",
+          "emoji": "✨",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "One who digs into the facts and figures it out",
+          "emoji": "🔬",
+          "weights": {
+            "I": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "Which compliment hits best?",
+      "options": [
+        {
+          "text": "\"You're so creative.\"",
+          "emoji": "🎨",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "\"You always know how to fix it.\"",
+          "emoji": "🛠️",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "\"You really get people.\"",
+          "emoji": "💛",
+          "weights": {
+            "S": 2
+          }
+        },
+        {
+          "text": "\"You're the most organized person I know.\"",
+          "emoji": "🗂️",
+          "weights": {
+            "C": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "question": "Your ideal workspace is…",
+      "options": [
+        {
+          "text": "A shop, studio, or build setup (physical or digital)",
+          "emoji": "🌲",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "A quiet desk where I can focus deep",
+          "emoji": "🤫",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "A buzzy studio with other creatives",
+          "emoji": "🎧",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "Wherever the people are",
+          "emoji": "🗣️",
+          "weights": {
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "question": "Pick a side quest for the month:",
+      "options": [
+        {
+          "text": "Start a little business or side hustle",
+          "emoji": "💸",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "Organize my whole life into the perfect system",
+          "emoji": "🗂️",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "Learn how something actually works",
+          "emoji": "🧠",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "Teach someone a skill I'm good at",
+          "emoji": "🧑‍🏫",
+          "weights": {
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "question": "A problem shows up. First instinct?",
+      "options": [
+        {
+          "text": "Take charge and get people moving",
+          "emoji": "🎯",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "Break it down and analyze it",
+          "emoji": "📊",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "Try a hands-on fix - tools, code, or AI",
+          "emoji": "🔩",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "Make a clear plan and checklist",
+          "emoji": "✅",
+          "weights": {
+            "C": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "question": "What would make a job feel worth it?",
+      "options": [
+        {
+          "text": "Helping real people, directly",
+          "emoji": "🫶",
+          "weights": {
+            "S": 2
+          }
+        },
+        {
+          "text": "Creating something original",
+          "emoji": "🖌️",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "Building something that works",
+          "emoji": "🏗️",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "Growing something big",
+          "emoji": "📈",
+          "weights": {
+            "E": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "question": "Be honest - meetings are…",
+      "options": [
+        {
+          "text": "Great! I think out loud with people",
+          "emoji": "🗣️",
+          "weights": {
+            "S": 2
+          }
+        },
+        {
+          "text": "Fine in small doses, then let me work",
+          "emoji": "🙂",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "Draining - I'd rather be building",
+          "emoji": "😮‍💨",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "Only worth it if we're deciding something",
+          "emoji": "⚡",
+          "weights": {
+            "E": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "question": "Your most-used app is probably…",
+      "options": [
+        {
+          "text": "Pinterest / camera / design apps",
+          "emoji": "📸",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "YouTube explainers / Wikipedia",
+          "emoji": "📚",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "Notion / calendar / to-do list",
+          "emoji": "🗓️",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "Messages / socials",
+          "emoji": "💬",
+          "weights": {
+            "S": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "The dream, 5 years from now:",
+      "options": [
+        {
+          "text": "Running my own thing",
+          "emoji": "🏆",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "A portfolio of things I designed",
+          "emoji": "🎖️",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "Known as the expert who figures things out",
+          "emoji": "🔬",
+          "weights": {
+            "I": 2
+          }
+        },
+        {
+          "text": "Shipping work I can point at and say I made that",
+          "emoji": "🧱",
+          "weights": {
+            "R": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "What gives you the most energy?",
+      "options": [
+        {
+          "text": "Freedom to improvise",
+          "emoji": "🎨",
+          "weights": {
+            "A": 2
+          }
+        },
+        {
+          "text": "Clear structure and knowing the plan",
+          "emoji": "📐",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "A little competition and winning",
+          "emoji": "🥇",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "Cracking a tricky puzzle",
+          "emoji": "🧩",
+          "weights": {
+            "I": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Last one - pick a superpower:",
+      "options": [
+        {
+          "text": "Build or fix almost anything - physical or digital",
+          "emoji": "🛠️",
+          "weights": {
+            "R": 2
+          }
+        },
+        {
+          "text": "Never miss a detail, deadline, or loose end",
+          "emoji": "📋",
+          "weights": {
+            "C": 2
+          }
+        },
+        {
+          "text": "Inspire any crowd",
+          "emoji": "🎤",
+          "weights": {
+            "E": 2
+          }
+        },
+        {
+          "text": "Make anyone feel understood",
+          "emoji": "💛",
+          "weights": {
+            "S": 2
+          }
+        }
+      ]
+    }
+  ]
+}

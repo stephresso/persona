@@ -1,0 +1,2842 @@
+{
+  "careers": [
+    {
+      "id": "electrician",
+      "title": "Electrician",
+      "category": "Skilled Trades",
+      "emoji": "⚡",
+      "description": "Install, maintain, and repair electrical systems in homes, businesses, and job sites.",
+      "riasec": {
+        "R": 7,
+        "I": 2.67,
+        "A": 1.28,
+        "S": 1.26,
+        "E": 1.85,
+        "C": 4.22
+      },
+      "primaryArchetype": "R",
+      "skills": [
+        "Wiring & circuits",
+        "Blueprint reading",
+        "Problem solving",
+        "Safety codes"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "low",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$48k-$62k",
+        "mid": "$58k-$85k",
+        "enterprise": "$80k-$110k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "At a small electrical contractor, you wear every hat and handle jobs end to end.",
+          "pros": [
+            "Huge variety of jobs",
+            "Learn fast, close to the owner"
+          ],
+          "cons": [
+            "Less steady hours",
+            "Fewer benefits"
+          ],
+          "typicalTasks": [
+            "Residential wiring",
+            "Service calls",
+            "Quoting small jobs"
+          ]
+        },
+        "mid": {
+          "description": "A regional contractor gives you steady crews and bigger commercial projects.",
+          "pros": [
+            "Reliable schedule",
+            "Clear path to foreman"
+          ],
+          "cons": [
+            "More repetition",
+            "Travel between sites"
+          ],
+          "typicalTasks": [
+            "Commercial installs",
+            "Mentoring apprentices",
+            "Inspections"
+          ]
+        },
+        "enterprise": {
+          "description": "At a large industrial or utility employer, you specialize and work to tight standards.",
+          "pros": [
+            "Top pay & benefits",
+            "Specialized, high-skill work"
+          ],
+          "cons": [
+            "More bureaucracy",
+            "Less day-to-day variety"
+          ],
+          "typicalTasks": [
+            "High-voltage systems",
+            "Preventive maintenance",
+            "Code compliance"
+          ]
+        }
+      },
+      "entry": {
+        "path": "apprenticeship",
+        "note": "Most electricians start as apprentices and earn while they learn under a licensed journeyman."
+      },
+      "proofProjects": [
+        {
+          "title": "Home lab wiring board",
+          "brief": "Build a practice panel with outlets, switches, and GFCI. Photo the layout and walk through your safety checklist."
+        },
+        {
+          "title": "Code-compliant lighting plan",
+          "brief": "Draft a one-room lighting plan with circuit loads and a materials list that matches local code basics."
+        }
+      ],
+      "onetCodes": [
+        "47-2111.00"
+      ]
+    },
+    {
+      "id": "chef",
+      "title": "Chef / Cook",
+      "category": "Culinary",
+      "emoji": "🍳",
+      "description": "Create dishes and run the line in kitchens, from cafes to fine dining.",
+      "riasec": {
+        "R": 5.34,
+        "I": 1.51,
+        "A": 2.59,
+        "S": 2.87,
+        "E": 4.5,
+        "C": 4.35
+      },
+      "primaryArchetype": "R",
+      "skills": [
+        "Knife & cooking technique",
+        "Menu creation",
+        "Speed under pressure",
+        "Food safety"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "low",
+        "pace": "fast",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$36k-$48k",
+        "mid": "$45k-$68k",
+        "enterprise": "$65k-$95k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "In a small indie kitchen you own the menu and cook what you believe in.",
+          "pros": [
+            "Creative freedom",
+            "Tight, scrappy team"
+          ],
+          "cons": [
+            "Long hours",
+            "Thin margins"
+          ],
+          "typicalTasks": [
+            "Menu design",
+            "Prep & service",
+            "Ordering ingredients"
+          ]
+        },
+        "mid": {
+          "description": "A growing restaurant group offers structure and a real brigade.",
+          "pros": [
+            "Defined roles",
+            "Chance to lead a station or kitchen"
+          ],
+          "cons": [
+            "Less creative control",
+            "Evenings & weekends"
+          ],
+          "typicalTasks": [
+            "Running a station",
+            "Training line cooks",
+            "Consistency checks"
+          ]
+        },
+        "enterprise": {
+          "description": "Hotels and large operators need chefs who can scale quality to volume.",
+          "pros": [
+            "Benefits & stability",
+            "Big catering/banquet budgets"
+          ],
+          "cons": [
+            "Standardized menus",
+            "Corporate processes"
+          ],
+          "typicalTasks": [
+            "High-volume service",
+            "Costing & inventory",
+            "Team scheduling"
+          ]
+        }
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Culinary school helps, but many chefs climb from prep cook with a strong station portfolio and stage experience."
+      },
+      "proofProjects": [
+        {
+          "title": "Three-course tasting menu",
+          "brief": "Cook and plate a full tasting for guests. Document mise, timing, and cost per plate."
+        },
+        {
+          "title": "Station run book",
+          "brief": "Write a one-page run book for a station you know: setup, ticket flow, and close-down."
+        }
+      ],
+      "onetCodes": [
+        "35-1011.00",
+        "35-2014.00"
+      ]
+    },
+    {
+      "id": "carpenter",
+      "title": "Carpenter / Builder",
+      "category": "Skilled Trades",
+      "emoji": "🔨",
+      "description": "Build and finish structures and furniture from wood and other materials.",
+      "riasec": {
+        "R": 6.74,
+        "I": 1.9,
+        "A": 2.19,
+        "S": 1.9,
+        "E": 1.79,
+        "C": 3.46
+      },
+      "primaryArchetype": "R",
+      "skills": [
+        "Measuring & cutting",
+        "Tool mastery",
+        "Blueprint reading",
+        "Finishing"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "low",
+        "pace": "steady",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$42k-$58k",
+        "mid": "$52k-$75k",
+        "enterprise": "$70k-$100k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "As a solo or small-crew carpenter you take custom jobs start to finish.",
+          "pros": [
+            "Creative, custom work",
+            "Be your own boss"
+          ],
+          "cons": [
+            "Finding steady work",
+            "You handle the admin too"
+          ],
+          "typicalTasks": [
+            "Custom builds",
+            "Client walkthroughs",
+            "On-site fixes"
+          ]
+        },
+        "mid": {
+          "description": "A construction firm offers bigger projects and a dependable crew.",
+          "pros": [
+            "Steady pipeline",
+            "Learn large-scale methods"
+          ],
+          "cons": [
+            "Less custom craft",
+            "Fixed schedules"
+          ],
+          "typicalTasks": [
+            "Framing",
+            "Installing fixtures",
+            "Site coordination"
+          ]
+        },
+        "enterprise": {
+          "description": "Large developers run high-volume, spec-driven builds.",
+          "pros": [
+            "Union pay & benefits",
+            "Consistent work"
+          ],
+          "cons": [
+            "Repetitive tasks",
+            "Strict processes"
+          ],
+          "typicalTasks": [
+            "Production framing",
+            "Quality checks",
+            "Following specs"
+          ]
+        }
+      },
+      "entry": {
+        "path": "apprenticeship",
+        "note": "Trade school or an apprenticeship is the usual door. A clean project portfolio beats a resume alone."
+      },
+      "proofProjects": [
+        {
+          "title": "Built-in shelf install",
+          "brief": "Design, cut, and install a small built-in. Show measurements, joinery, and finish."
+        },
+        {
+          "title": "Framing detail study",
+          "brief": "Rebuild a common framing detail (header, stair stringer) and label every member."
+        }
+      ],
+      "onetCodes": [
+        "47-2031.00"
+      ]
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "category": "Data & Tech",
+      "emoji": "📈",
+      "description": "Turn messy data into clear insights that help people make decisions.",
+      "riasec": {
+        "R": 1.64,
+        "I": 6.23,
+        "A": 2.27,
+        "S": 1.77,
+        "E": 3.09,
+        "C": 5.51
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "SQL & spreadsheets",
+        "Data viz",
+        "Statistics",
+        "Storytelling"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$75k-$100k",
+        "mid": "$95k-$130k",
+        "enterprise": "$120k-$165k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You're the whole data team - set up tracking and answer everything.",
+          "pros": [
+            "Broad impact",
+            "Learn the whole stack"
+          ],
+          "cons": [
+            "Messy data",
+            "Little mentorship"
+          ],
+          "typicalTasks": [
+            "Building dashboards",
+            "Ad-hoc analysis",
+            "Setting up metrics"
+          ]
+        },
+        "mid": {
+          "description": "A scaling company gives you cleaner data and a small analytics team.",
+          "pros": [
+            "Real mentorship",
+            "Focused projects"
+          ],
+          "cons": [
+            "Growing pains",
+            "Shifting priorities"
+          ],
+          "typicalTasks": [
+            "Reporting",
+            "A/B test analysis",
+            "Partnering with teams"
+          ]
+        },
+        "enterprise": {
+          "description": "Big companies have mature data platforms and deep specialization.",
+          "pros": [
+            "Great tools & pay",
+            "Clear career ladder"
+          ],
+          "cons": [
+            "Narrow scope",
+            "Slower pace"
+          ],
+          "typicalTasks": [
+            "Deep-dive analysis",
+            "Automated reporting",
+            "Stakeholder reviews"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "A degree helps, but hiring managers often care more about SQL, clear dashboards, and a public analysis repo."
+      },
+      "proofProjects": [
+        {
+          "title": "Public data deep dive",
+          "brief": "Pick an open dataset, ask a real business question, and ship a dashboard plus a one-page insight memo."
+        },
+        {
+          "title": "Metric definition kit",
+          "brief": "Define 5 product metrics with SQL, edge cases, and a short glossary teammates can reuse."
+        }
+      ],
+      "onetCodes": [
+        "15-2051.00",
+        "15-2051.01"
+      ]
+    },
+    {
+      "id": "software-engineer",
+      "title": "Software Engineer",
+      "category": "Engineering",
+      "emoji": "💻",
+      "description": "Design and build the apps, sites, and systems people use every day.",
+      "riasec": {
+        "R": 3.93,
+        "I": 5.86,
+        "A": 2.26,
+        "S": 1.88,
+        "E": 1.87,
+        "C": 5.46
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "Programming",
+        "Problem solving",
+        "System design",
+        "Debugging"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$105k-$145k",
+        "mid": "$135k-$185k",
+        "enterprise": "$170k-$250k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You ship fast across the whole stack and see your code reach users instantly.",
+          "pros": [
+            "Big ownership",
+            "Ship daily"
+          ],
+          "cons": [
+            "Long hours",
+            "Wear many hats"
+          ],
+          "typicalTasks": [
+            "Building features",
+            "Fixing bugs",
+            "Setting up infra"
+          ]
+        },
+        "mid": {
+          "description": "A growth-stage company balances speed with real engineering practices.",
+          "pros": [
+            "Good mentorship",
+            "Modern tooling"
+          ],
+          "cons": [
+            "Evolving codebase",
+            "Shifting roadmaps"
+          ],
+          "typicalTasks": [
+            "Feature work",
+            "Code reviews",
+            "On-call rotations"
+          ]
+        },
+        "enterprise": {
+          "description": "Large tech companies offer deep specialization and polished systems.",
+          "pros": [
+            "Top compensation",
+            "Strong work-life balance"
+          ],
+          "cons": [
+            "Narrow focus",
+            "More process"
+          ],
+          "typicalTasks": [
+            "Owning a service",
+            "Design docs",
+            "Cross-team projects"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "CS degrees still help, but shipped projects with READMEs, tests, and a live demo open many doors."
+      },
+      "proofProjects": [
+        {
+          "title": "Full-stack product slice",
+          "brief": "Ship one real feature end to end: auth, data model, API, and UI. Deploy it and write the tradeoffs."
+        },
+        {
+          "title": "System design writeup",
+          "brief": "Document how you would scale a simple app. Diagrams, bottlenecks, and what you would cut first."
+        }
+      ],
+      "onetCodes": [
+        "15-1252.00"
+      ]
+    },
+    {
+      "id": "research-scientist",
+      "title": "Research Scientist",
+      "category": "Science & Research",
+      "emoji": "🧪",
+      "description": "Run experiments and investigations to push knowledge forward.",
+      "riasec": {
+        "R": 4.69,
+        "I": 7,
+        "A": 2.53,
+        "S": 2.68,
+        "E": 2.03,
+        "C": 4.41
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "Experiment design",
+        "Data analysis",
+        "Technical writing",
+        "Lab methods"
+      ],
+      "workStyle": {
+        "remoteFriendly": "medium",
+        "meetingLoad": "medium",
+        "pace": "calm",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$80k-$115k",
+        "mid": "$105k-$150k",
+        "enterprise": "$140k-$200k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "At a research startup you chase a focused breakthrough with a tight team.",
+          "pros": [
+            "Cutting-edge work",
+            "Real ownership"
+          ],
+          "cons": [
+            "Funding uncertainty",
+            "Limited resources"
+          ],
+          "typicalTasks": [
+            "Designing experiments",
+            "Prototyping",
+            "Writing up findings"
+          ]
+        },
+        "mid": {
+          "description": "A mid-size lab or institute balances exploration with resources.",
+          "pros": [
+            "Good equipment",
+            "Collaborative peers"
+          ],
+          "cons": [
+            "Grant pressure",
+            "Publish-or-perish"
+          ],
+          "typicalTasks": [
+            "Running studies",
+            "Analyzing results",
+            "Presenting at reviews"
+          ]
+        },
+        "enterprise": {
+          "description": "Big R&D orgs fund long-horizon research with serious infrastructure.",
+          "pros": [
+            "Deep resources",
+            "Stable funding"
+          ],
+          "cons": [
+            "More bureaucracy",
+            "Slower to publish"
+          ],
+          "typicalTasks": [
+            "Leading studies",
+            "Mentoring juniors",
+            "Cross-team research"
+          ]
+        }
+      },
+      "entry": {
+        "path": "degree",
+        "note": "Most research scientist roles expect a graduate degree and a publication or thesis trail."
+      },
+      "proofProjects": [
+        {
+          "title": "Replication study",
+          "brief": "Reproduce a published experiment on public data. Share methods, results, and where you diverged."
+        },
+        {
+          "title": "Lit review brief",
+          "brief": "Write a tight review of 8 to 12 papers on one question with a clear open problem at the end."
+        }
+      ],
+      "onetCodes": [
+        "19-1042.00",
+        "19-2012.00"
+      ]
+    },
+    {
+      "id": "graphic-designer",
+      "title": "Graphic Designer",
+      "category": "Creative & Design",
+      "emoji": "🎨",
+      "description": "Craft visuals, brands, and layouts that communicate and delight.",
+      "riasec": {
+        "R": 3.2,
+        "I": 2.83,
+        "A": 7,
+        "S": 2.31,
+        "E": 3.61,
+        "C": 3.78
+      },
+      "primaryArchetype": "A",
+      "skills": [
+        "Typography",
+        "Layout",
+        "Design tools",
+        "Brand thinking"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$48k-$68k",
+        "mid": "$60k-$90k",
+        "enterprise": "$85k-$125k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You shape the whole brand and touch everything visual.",
+          "pros": [
+            "Creative range",
+            "Define the look"
+          ],
+          "cons": [
+            "Tight budgets",
+            "Fuzzy direction"
+          ],
+          "typicalTasks": [
+            "Logos & branding",
+            "Social graphics",
+            "Pitch decks"
+          ]
+        },
+        "mid": {
+          "description": "A growing brand team gives you focus and real projects.",
+          "pros": [
+            "Defined craft",
+            "Team feedback"
+          ],
+          "cons": [
+            "More approvals",
+            "Brand guardrails"
+          ],
+          "typicalTasks": [
+            "Campaign design",
+            "Design systems",
+            "Marketing assets"
+          ]
+        },
+        "enterprise": {
+          "description": "Large companies have polished brand systems and specialized roles.",
+          "pros": [
+            "Big reach",
+            "Great resources"
+          ],
+          "cons": [
+            "Rigid guidelines",
+            "Many stakeholders"
+          ],
+          "typicalTasks": [
+            "On-brand assets",
+            "Templates",
+            "Cross-team design"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Portfolios win. Formal school is optional if your case studies show craft and client thinking."
+      },
+      "proofProjects": [
+        {
+          "title": "Brand system mini",
+          "brief": "Create a logo, type, color, and 3 mock applications for a fictional or local business."
+        },
+        {
+          "title": "Campaign case study",
+          "brief": "Redesign a campaign end to end and explain constraints, options you killed, and final rationale."
+        }
+      ],
+      "onetCodes": [
+        "27-1024.00"
+      ]
+    },
+    {
+      "id": "content-creator",
+      "title": "Video / Content Creator",
+      "category": "Creative & Design",
+      "emoji": "🎬",
+      "description": "Plan, shoot, and edit video and content that builds an audience.",
+      "riasec": {
+        "R": 2.13,
+        "I": 2.62,
+        "A": 6.19,
+        "S": 2.36,
+        "E": 3.89,
+        "C": 3.59
+      },
+      "primaryArchetype": "A",
+      "skills": [
+        "Video editing",
+        "Storytelling",
+        "Social trends",
+        "On-camera/production"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "low",
+        "pace": "fast",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$42k-$70k",
+        "mid": "$60k-$105k",
+        "enterprise": "$90k-$160k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "Solo or tiny team - you're writer, shooter, and editor all at once.",
+          "pros": [
+            "Total creative control",
+            "Build your own voice"
+          ],
+          "cons": [
+            "Income can be uneven",
+            "You do everything"
+          ],
+          "typicalTasks": [
+            "Scripting",
+            "Filming & editing",
+            "Posting & analytics"
+          ]
+        },
+        "mid": {
+          "description": "A brand or agency gives you gear, budget, and a small crew.",
+          "pros": [
+            "Real budgets",
+            "Collaborative team"
+          ],
+          "cons": [
+            "Client notes",
+            "Deadlines"
+          ],
+          "typicalTasks": [
+            "Campaign videos",
+            "Channel strategy",
+            "Editing"
+          ]
+        },
+        "enterprise": {
+          "description": "Large media teams produce polished content at scale.",
+          "pros": [
+            "Pro equipment",
+            "Steady paycheck"
+          ],
+          "cons": [
+            "Approvals & brand rules",
+            "Less experimentation"
+          ],
+          "typicalTasks": [
+            "Produced shoots",
+            "Series content",
+            "Performance reviews"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Audience and published work matter more than credentials. Consistency and analytics literacy help."
+      },
+      "proofProjects": [
+        {
+          "title": "Series of 6",
+          "brief": "Ship a tight content series on one topic. Track what performed and rewrite one piece from the data."
+        },
+        {
+          "title": "Format experiment",
+          "brief": "Test two formats for the same idea. Document hooks, retention notes, and what you would scale."
+        }
+      ],
+      "onetCodes": [
+        "27-4032.00",
+        "27-3043.00"
+      ]
+    },
+    {
+      "id": "product-designer",
+      "title": "UX / Product Designer",
+      "category": "Creative & Design",
+      "emoji": "✏️",
+      "description": "Design how apps and products look, feel, and work for real people.",
+      "riasec": {
+        "R": 2.89,
+        "I": 3.85,
+        "A": 5.75,
+        "S": 2.26,
+        "E": 3.38,
+        "C": 4.09
+      },
+      "primaryArchetype": "A",
+      "skills": [
+        "User research",
+        "Wireframing",
+        "Prototyping",
+        "Visual design"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$85k-$120k",
+        "mid": "$110k-$155k",
+        "enterprise": "$145k-$210k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You own the whole product experience and ship designs fast.",
+          "pros": [
+            "End-to-end ownership",
+            "See ideas go live quickly"
+          ],
+          "cons": [
+            "Little research time",
+            "Wear many hats"
+          ],
+          "typicalTasks": [
+            "Wireframes",
+            "UI design",
+            "Quick user tests"
+          ]
+        },
+        "mid": {
+          "description": "A growing product team lets you focus and build a design system.",
+          "pros": [
+            "Real collaboration",
+            "Room to specialize"
+          ],
+          "cons": [
+            "Shifting priorities",
+            "Design debt"
+          ],
+          "typicalTasks": [
+            "Feature design",
+            "Prototyping",
+            "Usability testing"
+          ]
+        },
+        "enterprise": {
+          "description": "Big companies have mature design orgs and deep research.",
+          "pros": [
+            "Strong research support",
+            "Great pay"
+          ],
+          "cons": [
+            "Narrow scope",
+            "Lots of alignment"
+          ],
+          "typicalTasks": [
+            "Flows for one area",
+            "Design reviews",
+            "Cross-team work"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Strong case studies beat degrees. Show research, flows, and shipped outcomes when you can."
+      },
+      "proofProjects": [
+        {
+          "title": "End-to-end case study",
+          "brief": "Problem, research, wireframes, UI, and what changed after feedback. Keep it honest about constraints."
+        },
+        {
+          "title": "AI feature redesign",
+          "brief": "Redesign an AI-assisted flow with clear empty states, trust cues, and failure handling."
+        }
+      ],
+      "onetCodes": [
+        "15-1255.00",
+        "27-1024.00"
+      ]
+    },
+    {
+      "id": "nurse",
+      "title": "Registered Nurse",
+      "category": "Healthcare",
+      "emoji": "🏥",
+      "description": "Care for patients, deliver treatments, and be their advocate.",
+      "riasec": {
+        "R": 3.66,
+        "I": 4.82,
+        "A": 1.31,
+        "S": 5.62,
+        "E": 2.28,
+        "C": 4.58
+      },
+      "primaryArchetype": "S",
+      "skills": [
+        "Patient care",
+        "Clinical judgment",
+        "Communication",
+        "Staying calm"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "low",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$72k-$90k",
+        "mid": "$90k-$120k",
+        "enterprise": "$115k-$145k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "Clinics and small practices offer close patient relationships.",
+          "pros": [
+            "Know your patients",
+            "Predictable hours"
+          ],
+          "cons": [
+            "Fewer resources",
+            "Less specialization"
+          ],
+          "typicalTasks": [
+            "Patient check-ups",
+            "Giving treatments",
+            "Coordinating care"
+          ]
+        },
+        "mid": {
+          "description": "Community hospitals balance variety with support.",
+          "pros": [
+            "Diverse cases",
+            "Team support"
+          ],
+          "cons": [
+            "Shift work",
+            "Busy floors"
+          ],
+          "typicalTasks": [
+            "Bedside care",
+            "Charting",
+            "Working with doctors"
+          ]
+        },
+        "enterprise": {
+          "description": "Large hospital systems offer specialties and advancement.",
+          "pros": [
+            "Top pay & benefits",
+            "Specialty paths"
+          ],
+          "cons": [
+            "High intensity",
+            "Lots of protocol"
+          ],
+          "typicalTasks": [
+            "Specialized care",
+            "Mentoring new nurses",
+            "Complex cases"
+          ]
+        }
+      },
+      "entry": {
+        "path": "degree",
+        "note": "Licensed nursing requires an accredited program and board exams. There is no portfolio shortcut."
+      },
+      "proofProjects": [
+        {
+          "title": "Clinical skills checklist",
+          "brief": "Build a personal skills log from clinicals or simulation: procedure, confidence, and what to practice next."
+        },
+        {
+          "title": "Patient education one-pager",
+          "brief": "Write a clear handout for a common condition at a 6th-grade reading level and get peer feedback."
+        }
+      ],
+      "onetCodes": [
+        "29-1141.00"
+      ]
+    },
+    {
+      "id": "teacher",
+      "title": "Teacher / Educator",
+      "category": "Education",
+      "emoji": "📚",
+      "description": "Help people learn, grow, and discover what they're capable of.",
+      "riasec": {
+        "R": 2.7,
+        "I": 3.31,
+        "A": 3.85,
+        "S": 7,
+        "E": 2.66,
+        "C": 3.58
+      },
+      "primaryArchetype": "S",
+      "skills": [
+        "Explaining clearly",
+        "Patience",
+        "Lesson planning",
+        "Mentoring"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$48k-$62k",
+        "mid": "$58k-$78k",
+        "enterprise": "$75k-$105k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "Small or charter schools let you shape your own classroom style.",
+          "pros": [
+            "Creative freedom",
+            "Close-knit community"
+          ],
+          "cons": [
+            "Fewer resources",
+            "You do more with less"
+          ],
+          "typicalTasks": [
+            "Teaching lessons",
+            "Grading",
+            "Mentoring students"
+          ]
+        },
+        "mid": {
+          "description": "A typical public school offers structure and a full staff.",
+          "pros": [
+            "Stable schedule",
+            "Supportive colleagues"
+          ],
+          "cons": [
+            "Standardized curriculum",
+            "Large classes"
+          ],
+          "typicalTasks": [
+            "Lesson delivery",
+            "Parent meetings",
+            "Assessments"
+          ]
+        },
+        "enterprise": {
+          "description": "Large districts and ed-tech orgs offer scale and specialization.",
+          "pros": [
+            "Good benefits",
+            "Growth into leadership"
+          ],
+          "cons": [
+            "More bureaucracy",
+            "Testing pressure"
+          ],
+          "typicalTasks": [
+            "Curriculum work",
+            "Coaching teachers",
+            "Program design"
+          ]
+        }
+      },
+      "entry": {
+        "path": "degree",
+        "note": "Public school teaching usually needs a credential. Tutoring and curriculum samples can help you get started earlier."
+      },
+      "proofProjects": [
+        {
+          "title": "Unit plan sample",
+          "brief": "Design a 2-week unit with objectives, lessons, and assessments you could actually teach."
+        },
+        {
+          "title": "Classroom demo lesson",
+          "brief": "Record or write a full lesson with pacing, checks for understanding, and differentiation notes."
+        }
+      ],
+      "onetCodes": [
+        "25-2021.00",
+        "25-2031.00"
+      ]
+    },
+    {
+      "id": "counselor",
+      "title": "Counselor / Therapist",
+      "category": "Healthcare",
+      "emoji": "🧠",
+      "description": "Support people's mental health and help them work through challenges.",
+      "riasec": {
+        "R": 1.32,
+        "I": 4.44,
+        "A": 3.06,
+        "S": 6.76,
+        "E": 2.91,
+        "C": 3.45
+      },
+      "primaryArchetype": "S",
+      "skills": [
+        "Active listening",
+        "Empathy",
+        "Assessment",
+        "Confidentiality"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "low",
+        "pace": "calm",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$48k-$65k",
+        "mid": "$60k-$85k",
+        "enterprise": "$80k-$120k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "Private practice means you choose your clients and approach.",
+          "pros": [
+            "Own your schedule",
+            "Deep client work"
+          ],
+          "cons": [
+            "Build your own caseload",
+            "Handle the business side"
+          ],
+          "typicalTasks": [
+            "1:1 sessions",
+            "Treatment plans",
+            "Notes & follow-up"
+          ]
+        },
+        "mid": {
+          "description": "Group practices and clinics provide referrals and peers.",
+          "pros": [
+            "Steady referrals",
+            "Peer consultation"
+          ],
+          "cons": [
+            "Set hours",
+            "Caseload targets"
+          ],
+          "typicalTasks": [
+            "Client sessions",
+            "Case reviews",
+            "Coordinating care"
+          ]
+        },
+        "enterprise": {
+          "description": "Hospitals and health systems offer stability and specialties.",
+          "pros": [
+            "Benefits & stability",
+            "Specialty training"
+          ],
+          "cons": [
+            "Heavy caseloads",
+            "More paperwork"
+          ],
+          "typicalTasks": [
+            "Assessments",
+            "Group therapy",
+            "Interdisciplinary work"
+          ]
+        }
+      },
+      "entry": {
+        "path": "degree",
+        "note": "Licensed counseling requires graduate training and supervised hours. Peer support roles can be a step earlier."
+      },
+      "proofProjects": [
+        {
+          "title": "Resource map",
+          "brief": "Build a local resource guide for a population you care about with clear next steps and warm handoffs."
+        },
+        {
+          "title": "Session structure template",
+          "brief": "Draft a first-session outline with intake questions, goals, and notes on boundaries and referrals."
+        }
+      ],
+      "onetCodes": [
+        "21-1014.00"
+      ]
+    },
+    {
+      "id": "product-manager",
+      "title": "Product Manager",
+      "category": "Business & Leadership",
+      "emoji": "🚀",
+      "description": "Decide what to build and lead the team to ship it.",
+      "riasec": {
+        "R": 2.22,
+        "I": 2.39,
+        "A": 1.31,
+        "S": 3.37,
+        "E": 6.96,
+        "C": 5.32
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Prioritization",
+        "Communication",
+        "Strategy",
+        "Working with data"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "high",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$105k-$145k",
+        "mid": "$135k-$180k",
+        "enterprise": "$170k-$240k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You set the vision and do a bit of everything to ship it.",
+          "pros": [
+            "Huge influence",
+            "Move fast"
+          ],
+          "cons": [
+            "Ambiguity",
+            "Wear many hats"
+          ],
+          "typicalTasks": [
+            "Talking to users",
+            "Setting priorities",
+            "Rallying the team"
+          ]
+        },
+        "mid": {
+          "description": "A growth company gives you a focused product area and a team.",
+          "pros": [
+            "Clear ownership",
+            "Real resources"
+          ],
+          "cons": [
+            "Competing priorities",
+            "Scaling pains"
+          ],
+          "typicalTasks": [
+            "Roadmapping",
+            "Writing specs",
+            "Launching features"
+          ]
+        },
+        "enterprise": {
+          "description": "Big companies need PMs to align many teams on one product.",
+          "pros": [
+            "Big impact at scale",
+            "Strong pay"
+          ],
+          "cons": [
+            "Lots of meetings",
+            "Slower decisions"
+          ],
+          "typicalTasks": [
+            "Stakeholder alignment",
+            "Strategy docs",
+            "Metrics reviews"
+          ]
+        }
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "PMs come from engineering, design, support, and ops. Show judgment with PRDs and shipped experiments."
+      },
+      "proofProjects": [
+        {
+          "title": "One-page PRD",
+          "brief": "Write a PRD for a real product gap: problem, users, success metrics, and a cut-line for v1."
+        },
+        {
+          "title": "Opportunity brief",
+          "brief": "Size a problem with public data or user interviews. Recommend ship, iterate, or kill."
+        }
+      ],
+      "onetCodes": [
+        "11-1021.00"
+      ]
+    },
+    {
+      "id": "marketing-manager",
+      "title": "Marketing Manager",
+      "category": "Business & Leadership",
+      "emoji": "📣",
+      "description": "Grow an audience and get the right people to care about a product.",
+      "riasec": {
+        "R": 1,
+        "I": 2.9,
+        "A": 2.45,
+        "S": 2.82,
+        "E": 7,
+        "C": 4.7
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Campaign strategy",
+        "Copy & messaging",
+        "Analytics",
+        "Creativity"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "high",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$85k-$120k",
+        "mid": "$120k-$180k",
+        "enterprise": "$160k-$230k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You run all of marketing and test everything to find what works.",
+          "pros": [
+            "Creative freedom",
+            "See direct impact"
+          ],
+          "cons": [
+            "Small budget",
+            "Do it all yourself"
+          ],
+          "typicalTasks": [
+            "Running campaigns",
+            "Content & social",
+            "Tracking growth"
+          ]
+        },
+        "mid": {
+          "description": "A scaling company gives you a channel to own and a small team.",
+          "pros": [
+            "Build a team",
+            "Real budget"
+          ],
+          "cons": [
+            "Aggressive targets",
+            "Shifting strategy"
+          ],
+          "typicalTasks": [
+            "Channel strategy",
+            "Managing creatives",
+            "Reporting on ROI"
+          ]
+        },
+        "enterprise": {
+          "description": "Large brands run coordinated, big-budget marketing programs.",
+          "pros": [
+            "Big budgets",
+            "Strong brand to work with"
+          ],
+          "cons": [
+            "Many approvals",
+            "Narrow focus"
+          ],
+          "typicalTasks": [
+            "Campaign planning",
+            "Agency management",
+            "Brand strategy"
+          ]
+        }
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Degrees help at big brands; startups hire for campaigns you can prove with numbers and creative samples."
+      },
+      "proofProjects": [
+        {
+          "title": "Campaign teardown",
+          "brief": "Analyze a live campaign: funnel, creative, spend assumptions, and three changes you would try next."
+        },
+        {
+          "title": "Launch plan",
+          "brief": "Write a 30-day launch plan for a product with channels, assets, and how you will measure lift."
+        }
+      ],
+      "onetCodes": [
+        "11-2021.00"
+      ]
+    },
+    {
+      "id": "sales-rep",
+      "title": "Account Executive (Sales)",
+      "category": "Business & Leadership",
+      "emoji": "🤝",
+      "description": "Build relationships and close deals that grow the business.",
+      "riasec": {
+        "R": 2.64,
+        "I": 2.3,
+        "A": 1.69,
+        "S": 2.63,
+        "E": 6.09,
+        "C": 4.89
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Persuasion",
+        "Relationship building",
+        "Negotiation",
+        "Resilience"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "high",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$55k-$100k+comm",
+        "mid": "$85k-$150k+comm",
+        "enterprise": "$120k-$230k+comm"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You're an early rep, figuring out the pitch and closing founding customers.",
+          "pros": [
+            "Uncapped upside",
+            "Shape the sales motion"
+          ],
+          "cons": [
+            "No playbook yet",
+            "High pressure"
+          ],
+          "typicalTasks": [
+            "Prospecting",
+            "Demos",
+            "Closing deals"
+          ]
+        },
+        "mid": {
+          "description": "A growing company gives you leads, a process, and a quota.",
+          "pros": [
+            "Warm leads",
+            "Clear commission"
+          ],
+          "cons": [
+            "Quota pressure",
+            "Changing territory"
+          ],
+          "typicalTasks": [
+            "Managing pipeline",
+            "Client calls",
+            "Hitting targets"
+          ]
+        },
+        "enterprise": {
+          "description": "Large companies run big, complex deals with full support.",
+          "pros": [
+            "Big deal sizes",
+            "Strong support team"
+          ],
+          "cons": [
+            "Long sales cycles",
+            "Lots of process"
+          ],
+          "typicalTasks": [
+            "Enterprise deals",
+            "Account management",
+            "Forecasting"
+          ]
+        }
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Sales is proof-heavy. Pipeline stories, call recordings, and quota history beat formal schooling."
+      },
+      "proofProjects": [
+        {
+          "title": "Outbound sequence",
+          "brief": "Build a 7-touch sequence with talk tracks, objection handling, and a simple CRM tracker."
+        },
+        {
+          "title": "Discovery call script",
+          "brief": "Write and practice a discovery call that surfaces pain, budget, and next step without pitching early."
+        }
+      ],
+      "onetCodes": [
+        "41-4012.00"
+      ]
+    },
+    {
+      "id": "accountant",
+      "title": "Accountant",
+      "category": "Finance & Operations",
+      "emoji": "🧾",
+      "description": "Keep finances accurate, organized, and compliant.",
+      "riasec": {
+        "R": 1.14,
+        "I": 3.57,
+        "A": 1.09,
+        "S": 2.13,
+        "E": 3.86,
+        "C": 7
+      },
+      "primaryArchetype": "C",
+      "skills": [
+        "Bookkeeping",
+        "Attention to detail",
+        "Tax & compliance",
+        "Spreadsheets"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "low",
+        "pace": "steady",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$58k-$78k",
+        "mid": "$75k-$110k",
+        "enterprise": "$100k-$145k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You handle the whole set of books and learn every part of finance.",
+          "pros": [
+            "See the full picture",
+            "Broad skills"
+          ],
+          "cons": [
+            "Lots on your plate",
+            "Few peers"
+          ],
+          "typicalTasks": [
+            "Bookkeeping",
+            "Invoicing",
+            "Basic reporting"
+          ]
+        },
+        "mid": {
+          "description": "A finance team lets you focus on an area and grow.",
+          "pros": [
+            "Mentorship",
+            "Clear processes"
+          ],
+          "cons": [
+            "Month-end crunch",
+            "Repetitive cycles"
+          ],
+          "typicalTasks": [
+            "Reconciliations",
+            "Financial reports",
+            "Supporting audits"
+          ]
+        },
+        "enterprise": {
+          "description": "Large companies have specialized teams and strong systems.",
+          "pros": [
+            "Great benefits",
+            "Clear ladder"
+          ],
+          "cons": [
+            "Narrow scope",
+            "Heavy process"
+          ],
+          "typicalTasks": [
+            "Specialized accounting",
+            "Compliance",
+            "Internal controls"
+          ]
+        }
+      },
+      "entry": {
+        "path": "degree",
+        "note": "Accounting roles usually expect a degree; CPA tracks add more school and exams. Bookkeeping can start earlier."
+      },
+      "proofProjects": [
+        {
+          "title": "Books for a small biz",
+          "brief": "Set up a chart of accounts and monthly close checklist for a fictional shop. Export clean reports."
+        },
+        {
+          "title": "Variance analysis memo",
+          "brief": "Explain a budget vs actual gap in plain language with drivers and recommended actions."
+        }
+      ],
+      "onetCodes": [
+        "13-2011.00"
+      ]
+    },
+    {
+      "id": "project-coordinator",
+      "title": "Project Manager",
+      "category": "Finance & Operations",
+      "emoji": "🗂️",
+      "description": "Keep projects, people, and deadlines moving in the right direction.",
+      "riasec": {
+        "R": 1.46,
+        "I": 2.76,
+        "A": 1.58,
+        "S": 3.35,
+        "E": 6.36,
+        "C": 5.56
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Planning",
+        "Organization",
+        "Communication",
+        "Risk management"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "high",
+        "pace": "steady",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$70k-$95k",
+        "mid": "$95k-$130k",
+        "enterprise": "$120k-$165k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You bring order to a fast, scrappy team juggling many things.",
+          "pros": [
+            "High impact",
+            "Touch every project"
+          ],
+          "cons": [
+            "Shifting plans",
+            "Limited tooling"
+          ],
+          "typicalTasks": [
+            "Tracking tasks",
+            "Unblocking the team",
+            "Status updates"
+          ]
+        },
+        "mid": {
+          "description": "A growing company gives you defined projects and processes.",
+          "pros": [
+            "Clear role",
+            "Room to improve process"
+          ],
+          "cons": [
+            "Competing deadlines",
+            "Scaling complexity"
+          ],
+          "typicalTasks": [
+            "Planning sprints",
+            "Managing timelines",
+            "Coordinating teams"
+          ]
+        },
+        "enterprise": {
+          "description": "Large orgs run complex programs across many stakeholders.",
+          "pros": [
+            "Big programs",
+            "Strong methodology"
+          ],
+          "cons": [
+            "Heavy process",
+            "Lots of meetings"
+          ],
+          "typicalTasks": [
+            "Program planning",
+            "Risk tracking",
+            "Executive reporting"
+          ]
+        }
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Coordinators often grow from ops or admin. Certifications help; calm delivery and clear trackers matter more."
+      },
+      "proofProjects": [
+        {
+          "title": "Project tracker kit",
+          "brief": "Build a lightweight tracker with owners, risks, and a weekly status template teams can reuse."
+        },
+        {
+          "title": "Retro writeup",
+          "brief": "Run a mock retrospective on a delayed project. Capture what happened and three process changes."
+        }
+      ],
+      "onetCodes": [
+        "13-1082.00"
+      ]
+    },
+    {
+      "id": "operations-analyst",
+      "title": "Operations Analyst",
+      "category": "Finance & Operations",
+      "emoji": "⚙️",
+      "description": "Make how a business runs smoother, cheaper, and more reliable.",
+      "riasec": {
+        "R": 1.75,
+        "I": 5.86,
+        "A": 1.86,
+        "S": 2.41,
+        "E": 3.94,
+        "C": 5.95
+      },
+      "primaryArchetype": "C",
+      "skills": [
+        "Process design",
+        "Data analysis",
+        "Problem solving",
+        "Organization"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$65k-$90k",
+        "mid": "$85k-$120k",
+        "enterprise": "$110k-$155k+"
+      },
+      "companySize": {
+        "startup": {
+          "description": "You design the systems a young company needs to scale.",
+          "pros": [
+            "Build from scratch",
+            "Broad impact"
+          ],
+          "cons": [
+            "Constant change",
+            "Few guardrails"
+          ],
+          "typicalTasks": [
+            "Mapping processes",
+            "Fixing bottlenecks",
+            "Setting up tools"
+          ]
+        },
+        "mid": {
+          "description": "A scaling company needs you to tighten and standardize operations.",
+          "pros": [
+            "Visible improvements",
+            "Cross-team exposure"
+          ],
+          "cons": [
+            "Growing complexity",
+            "Shifting priorities"
+          ],
+          "typicalTasks": [
+            "Analyzing workflows",
+            "Reporting metrics",
+            "Driving projects"
+          ]
+        },
+        "enterprise": {
+          "description": "Large companies optimize operations at serious scale.",
+          "pros": [
+            "Big impact numbers",
+            "Great resources"
+          ],
+          "cons": [
+            "Lots of stakeholders",
+            "Slower change"
+          ],
+          "typicalTasks": [
+            "Process optimization",
+            "Forecasting",
+            "Cross-functional projects"
+          ]
+        }
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Ops analysts mix data and process. Spreadsheets, SOPs, and a before/after workflow story go far."
+      },
+      "proofProjects": [
+        {
+          "title": "Process map + fix",
+          "brief": "Map a messy process, find the bottleneck, and propose a simpler flow with a KPI to watch."
+        },
+        {
+          "title": "Ops dashboard",
+          "brief": "Build a weekly ops dashboard from sample data with alerts for when something is off."
+        }
+      ],
+      "onetCodes": [
+        "13-1111.00",
+        "15-2031.00"
+      ]
+    },
+    {
+      "id": "design-engineer",
+      "title": "Design Engineer",
+      "category": "Engineering",
+      "emoji": "🎨",
+      "description": "Ship product UI yourself: design systems, prototypes, and production front-end in one seat.",
+      "riasec": {
+        "R": 2.76,
+        "I": 4.97,
+        "A": 3.78,
+        "S": 2.23,
+        "E": 3.02,
+        "C": 4.74
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "UI engineering",
+        "Design systems",
+        "Prototyping",
+        "Product sense"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "fast",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$110k-$145k",
+        "mid": "$130k-$175k",
+        "enterprise": "$160k-$210k+"
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Hiring is portfolio-first. Show design craft and code that shipped, not just mockups."
+      },
+      "proofProjects": [
+        {
+          "title": "Designed and shipped feature",
+          "brief": "Own a feature from sketch to production PR. Include before/after and accessibility notes."
+        },
+        {
+          "title": "Tiny design system",
+          "brief": "Build 8 to 12 reusable components with tokens, states, and a living docs page."
+        },
+        {
+          "title": "Prototype that became code",
+          "brief": "Take a fuzzy product idea to interactive prototype, then implement the core path yourself."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You are often the design and front-end team. Speed and taste matter more than process.",
+          "pros": [
+            "Huge ownership",
+            "Ship daily"
+          ],
+          "cons": [
+            "Little design review",
+            "Context switching"
+          ],
+          "typicalTasks": [
+            "UI implementation",
+            "Quick prototypes",
+            "Polish passes"
+          ]
+        },
+        "mid": {
+          "description": "You partner with PMs and backend while owning web surfaces end to end.",
+          "pros": [
+            "Real systems work",
+            "Clear impact"
+          ],
+          "cons": [
+            "Cross-team negotiation",
+            "Legacy UI"
+          ],
+          "typicalTasks": [
+            "Feature delivery",
+            "System contributions",
+            "Design reviews"
+          ]
+        },
+        "enterprise": {
+          "description": "You work inside mature systems and stricter accessibility and brand rules.",
+          "pros": [
+            "Strong craft bar",
+            "Specialized peers"
+          ],
+          "cons": [
+            "Slower release trains",
+            "More process"
+          ],
+          "typicalTasks": [
+            "Platform UI",
+            "Design system work",
+            "Complex flows"
+          ]
+        }
+      },
+      "onetCodes": [
+        "15-1255.00",
+        "15-1254.00"
+      ]
+    },
+    {
+      "id": "ml-engineer",
+      "title": "ML Engineer",
+      "category": "Engineering",
+      "emoji": "🧠",
+      "description": "Put models into production: training pipelines, evaluation, serving, and monitoring.",
+      "riasec": {
+        "R": 3.05,
+        "I": 6.43,
+        "A": 2.42,
+        "S": 1.77,
+        "E": 1.79,
+        "C": 5.43
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "Python",
+        "Model training",
+        "MLOps",
+        "Evaluation"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$130k-$170k",
+        "mid": "$155k-$200k",
+        "enterprise": "$185k-$250k+"
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Strong degrees help, but deployed systems with evals and metrics can beat credentials alone."
+      },
+      "proofProjects": [
+        {
+          "title": "RAG assistant with evals",
+          "brief": "Ship retrieval + answers with citation and a small evaluation suite for quality and cost."
+        },
+        {
+          "title": "Training to serving path",
+          "brief": "Train a model, containerize inference, and log latency plus failure modes."
+        },
+        {
+          "title": "Data pipeline for features",
+          "brief": "Build a reproducible feature pipeline with validation checks and a clear schema."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You wear research and production hats. Pragmatism beats perfect papers.",
+          "pros": [
+            "Full stack ML",
+            "Fast learning"
+          ],
+          "cons": [
+            "Messy data",
+            "On-call surprises"
+          ],
+          "typicalTasks": [
+            "Prototypes",
+            "Deployments",
+            "Quick evals"
+          ]
+        },
+        "mid": {
+          "description": "Clearer ownership of a model area with platform support starting to exist.",
+          "pros": [
+            "Real users",
+            "Growing tooling"
+          ],
+          "cons": [
+            "Shifting priorities",
+            "Tech debt"
+          ],
+          "typicalTasks": [
+            "Model iteration",
+            "Monitoring",
+            "Partnering with product"
+          ]
+        },
+        "enterprise": {
+          "description": "Mature platforms, compliance, and specialization around a model family.",
+          "pros": [
+            "Scale and pay",
+            "Deep expertise"
+          ],
+          "cons": [
+            "Slow process",
+            "Narrow lane"
+          ],
+          "typicalTasks": [
+            "Production ML",
+            "Reliability",
+            "Reviews"
+          ]
+        }
+      },
+      "onetCodes": [
+        "15-2051.00",
+        "15-1252.00"
+      ]
+    },
+    {
+      "id": "ai-product-manager",
+      "title": "AI Product Manager",
+      "category": "Business & Leadership",
+      "emoji": "🧭",
+      "description": "Decide where AI helps users: define problems, eval criteria, and ship features that stay trustworthy.",
+      "riasec": {
+        "R": 2.22,
+        "I": 2.39,
+        "A": 1.31,
+        "S": 3.37,
+        "E": 6.96,
+        "C": 5.32
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Product strategy",
+        "AI literacy",
+        "Evaluation design",
+        "Stakeholder clarity"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "high",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$125k-$160k",
+        "mid": "$145k-$190k",
+        "enterprise": "$175k-$230k+"
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Often grows from PM, eng, or research. Show AI judgment with PRDs and eval frameworks, not buzzwords."
+      },
+      "proofProjects": [
+        {
+          "title": "AI feature PRD",
+          "brief": "Write a PRD with user jobs, failure modes, eval metrics, and a human-in-the-loop plan."
+        },
+        {
+          "title": "Eval scorecard",
+          "brief": "Define how you know the model is good enough: quality, safety, cost, and latency thresholds."
+        },
+        {
+          "title": "Opportunity teardown",
+          "brief": "Pick a product and argue where AI should not ship yet. Clarity about cuts is the skill."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You invent the AI roadmap while sitting with founders and eng.",
+          "pros": [
+            "Huge scope",
+            "Visible impact"
+          ],
+          "cons": [
+            "Ambiguity",
+            "Wearing many hats"
+          ],
+          "typicalTasks": [
+            "Roadmaps",
+            "User research",
+            "Launch criteria"
+          ]
+        },
+        "mid": {
+          "description": "You own a slice of AI surface area with clearer teams around you.",
+          "pros": [
+            "Real usage data",
+            "Cross-functional partners"
+          ],
+          "cons": [
+            "Roadmap politics",
+            "Legacy constraints"
+          ],
+          "typicalTasks": [
+            "Specs",
+            "Evals reviews",
+            "Go-to-market"
+          ]
+        },
+        "enterprise": {
+          "description": "Governance, risk, and platform teams shape what you can ship.",
+          "pros": [
+            "Scale",
+            "Specialists"
+          ],
+          "cons": [
+            "Slow approvals",
+            "Complex stakeholders"
+          ],
+          "typicalTasks": [
+            "Business cases",
+            "Compliance reviews",
+            "Rollouts"
+          ]
+        }
+      },
+      "onetCodes": [
+        "11-1021.00"
+      ]
+    },
+    {
+      "id": "ai-ops-engineer",
+      "title": "AI Ops Engineer",
+      "category": "Data & Tech",
+      "emoji": "⚙️",
+      "description": "Keep AI systems reliable in production: prompts, tools, evals, cost, and incident response.",
+      "riasec": {
+        "R": 4.2,
+        "I": 4.05,
+        "A": 1,
+        "S": 2.22,
+        "E": 3.47,
+        "C": 6.18
+      },
+      "primaryArchetype": "C",
+      "skills": [
+        "Prompt systems",
+        "Observability",
+        "Evaluation",
+        "Incident response"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$115k-$150k",
+        "mid": "$135k-$180k",
+        "enterprise": "$160k-$215k+"
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Newer role. Prove you can run eval harnesses, reduce cost, and debug flaky model behavior."
+      },
+      "proofProjects": [
+        {
+          "title": "Eval harness",
+          "brief": "Build a regression suite for prompts or agents with golden cases and a weekly score report."
+        },
+        {
+          "title": "Cost and latency dashboard",
+          "brief": "Instrument an LLM path and show how you cut spend without tanking quality."
+        },
+        {
+          "title": "Incident playbook",
+          "brief": "Write a runbook for model drift or tool failures with rollback steps and owners."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You invent the ops layer while features keep changing under you.",
+          "pros": [
+            "Greenfield systems",
+            "Visible reliability wins"
+          ],
+          "cons": [
+            "Firefighting",
+            "Few precedents"
+          ],
+          "typicalTasks": [
+            "Prompt versioning",
+            "Alerts",
+            "Cost control"
+          ]
+        },
+        "mid": {
+          "description": "Dedicated ownership of AI reliability as product volume grows.",
+          "pros": [
+            "Clear mandate",
+            "Growing tooling"
+          ],
+          "cons": [
+            "On-call load",
+            "Cross-team deps"
+          ],
+          "typicalTasks": [
+            "Evals",
+            "Monitoring",
+            "Partnering with ML"
+          ]
+        },
+        "enterprise": {
+          "description": "Heavy process, audits, and shared platforms for many AI products.",
+          "pros": [
+            "Stability focus",
+            "Strong tooling budgets"
+          ],
+          "cons": [
+            "Bureaucracy",
+            "Slow change"
+          ],
+          "typicalTasks": [
+            "Platform ops",
+            "Compliance evidence",
+            "SLOs"
+          ]
+        }
+      },
+      "onetCodes": [
+        "15-1244.00"
+      ]
+    },
+    {
+      "id": "prompt-eval-engineer",
+      "title": "Prompt & Eval Engineer",
+      "category": "Data & Tech",
+      "emoji": "🧪",
+      "description": "Design prompts, tools, and evaluation suites so AI features behave predictably.",
+      "riasec": {
+        "R": 3.8,
+        "I": 5.76,
+        "A": 1.69,
+        "S": 1.53,
+        "E": 1.57,
+        "C": 5.68
+      },
+      "primaryArchetype": "I",
+      "skills": [
+        "Prompt design",
+        "Eval design",
+        "Data labeling",
+        "Quality analysis"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$105k-$140k",
+        "mid": "$125k-$165k",
+        "enterprise": "$150k-$195k+"
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Still forming as a title. Strong writing, systematic evals, and public case studies matter most."
+      },
+      "proofProjects": [
+        {
+          "title": "Prompt library with versions",
+          "brief": "Ship versioned prompts for one use case with before/after quality notes."
+        },
+        {
+          "title": "Human eval rubric",
+          "brief": "Create a rubric raters can use consistently and measure agreement on 50 examples."
+        },
+        {
+          "title": "Failure gallery",
+          "brief": "Catalog model failures by type and the prompt or tool change that fixed each class."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You sit next to product and ship prompt changes fast.",
+          "pros": [
+            "Immediate impact",
+            "Creative problem solving"
+          ],
+          "cons": [
+            "Moving targets",
+            "Hard to measure"
+          ],
+          "typicalTasks": [
+            "Prompt iteration",
+            "Manual review",
+            "Quick evals"
+          ]
+        },
+        "mid": {
+          "description": "More structure: datasets, raters, and shared eval platforms.",
+          "pros": [
+            "Better measurement",
+            "Clear ownership"
+          ],
+          "cons": [
+            "Volume of edge cases",
+            "Coordination"
+          ],
+          "typicalTasks": [
+            "Datasets",
+            "Rubrics",
+            "Release gates"
+          ]
+        },
+        "enterprise": {
+          "description": "Eval rigor and documentation become part of risk and brand trust.",
+          "pros": [
+            "Serious quality bar",
+            "Specialized peers"
+          ],
+          "cons": [
+            "Process heavy",
+            "Slower experiments"
+          ],
+          "typicalTasks": [
+            "Formal evals",
+            "Policy alignment",
+            "Audit trails"
+          ]
+        }
+      },
+      "onetCodes": [
+        "15-1253.00"
+      ]
+    },
+    {
+      "id": "ai-product-designer",
+      "title": "AI Product Designer",
+      "category": "Creative & Design",
+      "emoji": "✨",
+      "description": "Design interfaces for generative and agentic products: trust, control, and recovery when models miss.",
+      "riasec": {
+        "R": 2.89,
+        "I": 3.85,
+        "A": 5.75,
+        "S": 2.26,
+        "E": 3.38,
+        "C": 4.09
+      },
+      "primaryArchetype": "A",
+      "skills": [
+        "Interaction design",
+        "AI UX patterns",
+        "Prototyping",
+        "User research"
+      ],
+      "workStyle": {
+        "remoteFriendly": "high",
+        "meetingLoad": "medium",
+        "pace": "fast",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$110k-$145k",
+        "mid": "$130k-$170k",
+        "enterprise": "$155k-$200k+"
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "Case studies that show AI-specific UX (uncertainty, edits, citations) beat generic UI galleries."
+      },
+      "proofProjects": [
+        {
+          "title": "AI flow case study",
+          "brief": "Design a generative flow with loading, partial results, edit, and undo. Explain trust choices."
+        },
+        {
+          "title": "Error and empty states kit",
+          "brief": "Design a kit for hallucinations, refusals, and offline modes that still feels on-brand."
+        },
+        {
+          "title": "Human-in-the-loop review UI",
+          "brief": "Prototype a review queue where people correct model output and feed improvements back."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You invent patterns while the model still changes weekly.",
+          "pros": [
+            "Greenfield UX",
+            "Close to users"
+          ],
+          "cons": [
+            "Ambiguous requirements",
+            "Lots of rework"
+          ],
+          "typicalTasks": [
+            "Flows",
+            "Prototypes",
+            "Quick tests"
+          ]
+        },
+        "mid": {
+          "description": "You refine AI surfaces with stronger research and design system support.",
+          "pros": [
+            "Real usage data",
+            "Cross-functional partners"
+          ],
+          "cons": [
+            "Legacy patterns",
+            "Competing priorities"
+          ],
+          "typicalTasks": [
+            "Feature design",
+            "Research",
+            "System updates"
+          ]
+        },
+        "enterprise": {
+          "description": "Accessibility, brand, and risk review shape every generative surface.",
+          "pros": [
+            "High craft bar",
+            "Scale"
+          ],
+          "cons": [
+            "Slow approvals",
+            "Complex constraints"
+          ],
+          "typicalTasks": [
+            "Complex flows",
+            "Design critiques",
+            "Standards"
+          ]
+        }
+      },
+      "onetCodes": [
+        "15-1255.00",
+        "27-1024.00"
+      ]
+    },
+    {
+      "id": "model-maker",
+      "title": "Model Maker",
+      "category": "Skilled Trades",
+      "emoji": "🔩",
+      "description": "Make working metal or plastic models and prototypes on machines like lathes, mills, and CNC. Real BLS/O*NET title: Model Makers, Metal and Plastic (51-4061).",
+      "riasec": {
+        "R": 6.95,
+        "I": 3.12,
+        "A": 2.82,
+        "S": 1.05,
+        "E": 1,
+        "C": 3.85
+      },
+      "primaryArchetype": "R",
+      "skills": [
+        "CNC machining",
+        "Blueprint reading",
+        "Precision measuring",
+        "CAD & CAM"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "low",
+        "pace": "steady",
+        "peopleFacing": "low"
+      },
+      "salary": {
+        "startup": "$40k-$47k",
+        "mid": "$47k-$87k",
+        "enterprise": "$87k-$99k+"
+      },
+      "entry": {
+        "path": "apprenticeship",
+        "note": "O*NET: typically high school plus moderate-term on-the-job training or apprenticeship. CNC and blueprint skill show up in the job tasks."
+      },
+      "proofProjects": [
+        {
+          "title": "Prototype from a print",
+          "brief": "Make a working model from a blueprint or CAD file. Show tolerances, tools used, and what you reworked."
+        },
+        {
+          "title": "Jig or fixture",
+          "brief": "Build a jig or fixture that improves a repeat cut or assembly, as listed in O*NET tasks for this occupation."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "A small product shop or inventing team needs one-off models fast, often with limited machines.",
+          "pros": [
+            "Variety of builds",
+            "Close to designers"
+          ],
+          "cons": [
+            "Fewer machines",
+            "Less process"
+          ],
+          "typicalTasks": [
+            "One-off prototypes",
+            "Manual and CNC work",
+            "Quick rework"
+          ]
+        },
+        "mid": {
+          "description": "A manufacturer or product company with a model shop supporting engineering.",
+          "pros": [
+            "Clearer prints",
+            "Better tooling"
+          ],
+          "cons": [
+            "Deadline pressure",
+            "Revision cycles"
+          ],
+          "typicalTasks": [
+            "CNC model parts",
+            "Fit and finish",
+            "Engineering feedback"
+          ]
+        },
+        "enterprise": {
+          "description": "Auto, aerospace, or appliance model shops with formal process and inspection.",
+          "pros": [
+            "Serious equipment",
+            "Stable pay"
+          ],
+          "cons": [
+            "Strict process",
+            "Narrower scope"
+          ],
+          "typicalTasks": [
+            "Validated prototypes",
+            "Documentation",
+            "Hand off to tooling"
+          ]
+        }
+      },
+      "onetCodes": [
+        "51-4061.00"
+      ]
+    },
+    {
+      "id": "industrial-designer",
+      "title": "Industrial Designer",
+      "category": "Creative & Design",
+      "emoji": "🪑",
+      "description": "Shape physical products: form, materials, and how something feels in the hand.",
+      "riasec": {
+        "R": 4.64,
+        "I": 4.05,
+        "A": 5.55,
+        "S": 1.84,
+        "E": 3.69,
+        "C": 3.48
+      },
+      "primaryArchetype": "A",
+      "skills": [
+        "Prototyping",
+        "Product sense",
+        "Creativity",
+        "User research"
+      ],
+      "workStyle": {
+        "remoteFriendly": "medium",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$75k-$105k",
+        "mid": "$95k-$130k",
+        "enterprise": "$120k-$160k+"
+      },
+      "entry": {
+        "path": "portfolio",
+        "note": "A degree helps at big brands; a physical + digital portfolio of objects you designed often matters more."
+      },
+      "proofProjects": [
+        {
+          "title": "Object redesign",
+          "brief": "Pick an everyday object, redesign it, and show sketches, model, and a rough prototype."
+        },
+        {
+          "title": "Materials study",
+          "brief": "Make the same form in two materials and document feel, cost, and manufacturing notes."
+        },
+        {
+          "title": "Case study deck",
+          "brief": "Tell the story of one product: problem, users, iterations, and final rationale."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "You invent form while engineering is still catching up.",
+          "pros": [
+            "Ownership",
+            "Fast learning"
+          ],
+          "cons": [
+            "Wear many hats",
+            "Limited resources"
+          ],
+          "typicalTasks": [
+            "Sketches",
+            "CAD",
+            "Prototype reviews"
+          ]
+        },
+        "mid": {
+          "description": "Clearer product cycles with engineers and marketers in the loop.",
+          "pros": [
+            "Shipped products",
+            "Collaborators"
+          ],
+          "cons": [
+            "Compromise",
+            "Timeline pressure"
+          ],
+          "typicalTasks": [
+            "Design development",
+            "User tests",
+            "Manufacturer reviews"
+          ]
+        },
+        "enterprise": {
+          "description": "Brand systems, tooling constraints, and long product cycles.",
+          "pros": [
+            "Craft depth",
+            "Scale"
+          ],
+          "cons": [
+            "Slow process",
+            "Politics"
+          ],
+          "typicalTasks": [
+            "Platform design",
+            "Detailed CAD",
+            "Gate reviews"
+          ]
+        }
+      },
+      "onetCodes": [
+        "27-1021.00"
+      ]
+    },
+    {
+      "id": "warehouse-ops-lead",
+      "title": "Warehouse Ops Lead",
+      "category": "Finance & Operations",
+      "emoji": "📦",
+      "description": "Run the floor: people, flow, safety, and throughput in warehouses and fulfillment.",
+      "riasec": {
+        "R": 4.09,
+        "I": 1.24,
+        "A": 1,
+        "S": 3.54,
+        "E": 5.9,
+        "C": 5.01
+      },
+      "primaryArchetype": "E",
+      "skills": [
+        "Organization",
+        "Process design",
+        "Communication",
+        "Problem solving"
+      ],
+      "workStyle": {
+        "remoteFriendly": "low",
+        "meetingLoad": "medium",
+        "pace": "fast",
+        "peopleFacing": "high"
+      },
+      "salary": {
+        "startup": "$48k-$65k",
+        "mid": "$60k-$85k",
+        "enterprise": "$80k-$110k+"
+      },
+      "entry": {
+        "path": "mixed",
+        "note": "Many leads grow from the floor. Supervisory proof and process improvements beat a classroom alone."
+      },
+      "proofProjects": [
+        {
+          "title": "Flow map",
+          "brief": "Map a pick/pack flow, find the bottleneck, and propose a change with a simple metric."
+        },
+        {
+          "title": "Shift checklist",
+          "brief": "Write a start/mid/end shift checklist that a new hire could follow on day one."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "Small warehouse or 3PL cell where you invent process as you go.",
+          "pros": [
+            "Visible impact",
+            "Fast promotion path"
+          ],
+          "cons": [
+            "Chaos",
+            "Long days"
+          ],
+          "typicalTasks": [
+            "Floor coverage",
+            "Hiring help",
+            "Fixing broken flow"
+          ]
+        },
+        "mid": {
+          "description": "Regional site with KPIs, leads, and clearer ladders.",
+          "pros": [
+            "Team leadership",
+            "Stable volume"
+          ],
+          "cons": [
+            "Metric pressure",
+            "Shift work"
+          ],
+          "typicalTasks": [
+            "Coaching",
+            "Safety audits",
+            "Throughput reviews"
+          ]
+        },
+        "enterprise": {
+          "description": "Large fulfillment network with WMS and strict SOPs.",
+          "pros": [
+            "Pay and benefits",
+            "Clear roles"
+          ],
+          "cons": [
+            "Rigid process",
+            "Less invention"
+          ],
+          "typicalTasks": [
+            "KPI ownership",
+            "Labor planning",
+            "Incident response"
+          ]
+        }
+      },
+      "onetCodes": [
+        "53-1042.00"
+      ]
+    },
+    {
+      "id": "electrical-engineer",
+      "title": "Electrical Engineer",
+      "category": "Engineering",
+      "emoji": "⚡",
+      "description": "Design, develop, and test electrical systems and equipment - power, electronics, controls. BLS/O*NET 17-2071.",
+      "riasec": {
+        "R": 6.35,
+        "I": 5.31,
+        "A": 2.01,
+        "S": 1.57,
+        "E": 2.31,
+        "C": 5.01
+      },
+      "primaryArchetype": "R",
+      "skills": [
+        "Circuit design",
+        "Systems analysis",
+        "Mathematics",
+        "Problem solving"
+      ],
+      "workStyle": {
+        "remoteFriendly": "medium",
+        "meetingLoad": "medium",
+        "pace": "steady",
+        "peopleFacing": "medium"
+      },
+      "salary": {
+        "startup": "$77k-$93k",
+        "mid": "$93k-$153k",
+        "enterprise": "$153k-$184k+"
+      },
+      "entry": {
+        "path": "degree",
+        "note": "O*NET: typically a bachelor's in electrical engineering. Licensure (PE) matters for some public and consulting roles."
+      },
+      "proofProjects": [
+        {
+          "title": "Circuit or control project",
+          "brief": "Design and document a circuit or control system with requirements, schematic, and test results."
+        },
+        {
+          "title": "System analysis writeup",
+          "brief": "Analyze a power or electronics problem with calculations, tradeoffs, and a recommended design path."
+        }
+      ],
+      "companySize": {
+        "startup": {
+          "description": "Small hardware or energy teams need generalists who design and debug end to end.",
+          "pros": [
+            "Broad ownership",
+            "Fast learning"
+          ],
+          "cons": [
+            "Limited mentorship",
+            "Wear many hats"
+          ],
+          "typicalTasks": [
+            "Schematics",
+            "Bring-up",
+            "Quick tests"
+          ]
+        },
+        "mid": {
+          "description": "Product or industrial firms with clearer systems and design reviews.",
+          "pros": [
+            "Real products",
+            "Specialists nearby"
+          ],
+          "cons": [
+            "Cross-team deps",
+            "Schedule pressure"
+          ],
+          "typicalTasks": [
+            "Design reviews",
+            "Validation",
+            "Vendor parts"
+          ]
+        },
+        "enterprise": {
+          "description": "Utilities, aerospace, semiconductor, or large electronics with heavy process.",
+          "pros": [
+            "Depth and pay",
+            "Serious tools"
+          ],
+          "cons": [
+            "Process heavy",
+            "Narrower lane"
+          ],
+          "typicalTasks": [
+            "Specs",
+            "Compliance",
+            "Large system design"
+          ]
+        }
+      },
+      "onetCodes": [
+        "17-2071.00"
+      ]
+    }
+  ]
+}
